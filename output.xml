@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220815 13:56:45.822" rpa="false" schemaversion="3">
+<suite id="s1" name="TC2 POST Request" source="C:\Users\irfandy4hmad\PycharmProjects\robotFrameworkAPIAutomation\TestCases\TC2_POST_Request.robot">
+<test id="s1-t1" name="Post_CreateNewUser" line="9">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220815 13:56:46.026" level="INFO">Creating Session using : alias=mysession, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220815 13:56:46.026" endtime="20220815 13:56:46.027"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=johny</arg>
+<arg>job=plumber</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220815 13:56:46.027" level="INFO">${body} = {'name': 'johny', 'job': 'plumber'}</msg>
+<status status="PASS" starttime="20220815 13:56:46.027" endtime="20220815 13:56:46.027"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220815 13:56:46.028" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220815 13:56:46.028" endtime="20220815 13:56:46.028"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/api/users</arg>
+<arg>data=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220815 13:56:46.570" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '22', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=name=johny&amp;job=plumber 
+ </msg>
+<msg timestamp="20220815 13:56:46.570" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Mon, 15 Aug 2022 05:56:46 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '82', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"52-d+mFcDrZCTY1WpLtl1QDEeZQlL0"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=wruI2AapnMmPa1OuK73k%2BsWicn%2FVkCmsJLv9j7jowBAAjEdbAEOO2rorq6WoJVTLVOfJV0u7%2BZdpi3Aj%2FumPj7wGBpjygvC8mteAlB5KcD4JjoL4ddNBuchLVjDAAfwNGJhuZxT8yA%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '73afb05c8cfe391b-KUL'} 
+ body={"name":"johny","job":"plumber","id":"751","createdAt":"2022-08-15T05:56:46.442Z"} 
+ </msg>
+<msg timestamp="20220815 13:56:46.570" level="INFO">C:\Users\irfandy4hmad\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220815 13:56:46.570" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220815 13:56:46.029" endtime="20220815 13:56:46.570"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220815 13:56:46.578" endtime="20220815 13:56:46.582"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220815 13:56:46.583" endtime="20220815 13:56:46.584"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220815 13:56:46.588" level="INFO">${status_code} = 201</msg>
+<status status="PASS" starttime="20220815 13:56:46.588" endtime="20220815 13:56:46.588"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>201</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220815 13:56:46.591" endtime="20220815 13:56:46.592"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${res_body}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220815 13:56:46.594" level="INFO">${res_body} = {"name":"johny","job":"plumber","id":"751","createdAt":"2022-08-15T05:56:46.442Z"}</msg>
+<status status="PASS" starttime="20220815 13:56:46.593" endtime="20220815 13:56:46.594"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${res_body}</arg>
+<arg>createdAt</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220815 13:56:46.597" endtime="20220815 13:56:46.597"/>
+</kw>
+<status status="PASS" starttime="20220815 13:56:46.024" endtime="20220815 13:56:46.598"/>
+</test>
+<status status="PASS" starttime="20220815 13:56:45.826" endtime="20220815 13:56:46.602"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC2 POST Request">TC2 POST Request</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
