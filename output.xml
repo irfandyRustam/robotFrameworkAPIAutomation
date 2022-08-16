@@ -1,352 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220816 20:02:58.349" rpa="false" schemaversion="3">
-<suite id="s1" name="TC" source="C:\Users\irfandy4hmad\PycharmProjects\robotFrameworkAPIAutomation\ReqresAPI\TC.robot">
-<test id="s1-t1" name="TC1:List Users (GET)" line="9">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220816 21:48:46.926" rpa="false" schemaversion="3">
+<suite id="s1" name="TC5 ComplexJSONValidation" source="C:\Users\irfandy4hmad\PycharmProjects\robotFrameworkAPIAutomation\TestCases\TC5_ComplexJSONValidation.robot">
+<test id="s1-t1" name="Get_CountryInfo:" line="11">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220816 20:02:58.636" level="INFO">Creating Session using : alias=mysession, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220816 20:02:58.634" endtime="20220816 20:02:58.637"/>
+<msg timestamp="20220816 21:48:47.530" level="INFO">Creating Session using : alias=mysession, url=https://restcountries.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220816 21:48:47.529" endtime="20220816 21:48:47.532"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>mysession</arg>
-<arg>/api/users</arg>
+<arg>/v3.1/alpha/MY</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220816 20:02:58.729" level="INFO">GET Request : url=https://reqres.in/api/users 
- path_url=/api/users 
+<msg timestamp="20220816 21:48:49.823" level="INFO">GET Request : url=https://restcountries.com/v3.1/alpha/MY 
+ path_url=/v3.1/alpha/MY 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220816 20:02:58.729" level="INFO">GET Response : url=https://reqres.in/api/users 
+<msg timestamp="20220816 21:48:49.824" level="INFO">GET Response : url=https://restcountries.com/v3.1/alpha/MY 
  status=200, reason=OK 
- headers={'Date': 'Tue, 16 Aug 2022 12:02:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3e4-2RLXvr5wTg9YQ6aH95CkYoFNuO8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '5646', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=cG28azXlTdMTnasUMvGU3VXioEeD%2F6MJkAEei63EPlQzUXtH1ctAn6TRhZOkMAnuSrQoQfU4Lr8fVUsP%2FHhhlQ7ENKxZNv%2B3oOuwEA4oph8CiefaA%2FLqDGEDOBFeARoJyjAa7MKERw%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '73ba06319e364280-KUL', 'Content-Encoding': 'gzip'} 
- body={"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ headers={'Date': 'Tue, 16 Aug 2022 13:48:50 GMT', 'Server': 'Apache/2.4.38 (Debian)', 'Content-Type': 'application/json', 'content-encoding': 'gzip', 'content-length': '1125', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive'} 
+ body=[{"name":{"common":"Malaysia","official":"Malaysia","nativeName":{"eng":{"official":"Malaysia","common":"Malaysia"},"msa":{"official":"مليسيا","common":"مليسيا"}}},"tld":[".my"],"cca2":"MY","ccn3":"458","cca3":"MYS","cioc":"MAS","independent":true,"status":"officially-assigned","unMember":true,"currencies":{"MYR":{"name":"Malaysian ringgit","symbol":"RM"}},"idd":{"root":"+6","suffixes":["0"]},"capital":["Kuala Lumpur"],"altSpellings":["MY"],"region":"Asia","subregion":"South-Eastern Asia","languages":{"eng":"English","msa":"Malay"},"translations":{"ara":{"official":"ماليزيا","common":"ماليزيا"},"ces":{"official":"Malajsie","common":"Malajsie"},"cym":{"official":"Malaysia","common":"Malaysia"},"deu":{"official":"Malaysia","common":"Malaysia"},"est":{"official":"Malaisia","common":"Malaisia"},"fin":{"official":"Malesia","common":"Malesia"},"fra":{"official":"Fédération de Malaisie","common":"Malaisie"},"hrv":{"official":"Malezija","common":"Malezija"},"hun":{"official":"Malajzia","common":"Malajzia"},"ita":{"official":"Malaysia","common":"Malesia"},"jpn":{"official":"マレーシア","common":"マレーシア"},"kor":{"official":"말레이시아","common":"말레이시아"},"nld":{"official":"Maleisië","common":"Maleisië"},"per":{"official":"فدراسیون مالزی","common":"مالزی"},"pol":{"official":"Malezja","common":"Malezja"},"por":{"official":"Malásia","common":"Malásia"},"rus":{"official":"Малайзия","common":"Малайзия"},"slk":{"official":"Malajzia","common":"Malajzia"},"spa":{"official":"Malasia","common":"Malasia"},"swe":{"official":"Malaysia","common":"Malaysia"},"urd":{"official":"ملائیشیا","common":"ملائیشیا"},"zho":{"official":"马来西亚","common":"马来西亚"}},"latlng":[2.5,112.5],"landlocked":false,"borders":["BRN","IDN","THA"],"area":330803.0,"demonyms":{"eng":{"f":"Malaysian","m":"Malaysian"},"fra":{"f":"Malaisienne","m":"Malaisien"}},"flag":"\uD83C\uDDF2\uD83C\uDDFE","maps":{"googleMaps":"https://goo.gl/maps/qrY1PNeUXGyXDcPy6","openStreetMaps":"https://www.openstreetmap.org/relation/2108121"},"population":32365998,"gini":{"2015":41.1},"fifa":"MAS","car":{"signs":["MAL"],"side":"left"},"timezones":["UTC+08:00"],"continents":["Asia"],"flags":{"png":"https://flagcdn.com/w320/my.png","svg":"https://flagcdn.com/my.svg"},"coatOfArms":{"png":"https://mainfacts.com/media/images/coats_of_arms/my.png","svg":"https://mainfacts.com/media/images/coats_of_arms/my.svg"},"startOfWeek":"sunday","capitalInfo":{"latlng":[3.17,101.7]},"postalCode":{"format":"#####","regex":"^(\\d{5})$"}}] 
  </msg>
-<msg timestamp="20220816 20:02:58.729" level="INFO">C:\Users\irfandy4hmad\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20220816 21:48:49.824" level="INFO">C:\Users\irfandy4hmad\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restcountries.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20220816 20:02:58.731" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220816 20:02:58.637" endtime="20220816 20:02:58.731"/>
+<msg timestamp="20220816 21:48:49.826" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220816 21:48:47.533" endtime="20220816 21:48:49.826"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${country_Name}</var>
+<arg>${response.json()}</arg>
+<arg>$[0].name.official</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220816 21:48:49.878" level="INFO">${country_Name} = ['Malaysia']</msg>
+<status status="PASS" starttime="20220816 21:48:49.827" endtime="20220816 21:48:49.878"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${response.status_code}</arg>
+<arg>${country_Name[0]}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220816 20:02:58.732" endtime="20220816 20:02:58.733"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220816 20:02:58.734" endtime="20220816 20:02:58.736"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${status_code}</var>
-<arg>${response.status_code}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220816 20:02:58.738" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20220816 20:02:58.736" endtime="20220816 20:02:58.738"/>
+<status status="PASS" starttime="20220816 21:48:49.883" endtime="20220816 21:48:49.885"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
-<arg>${status_code}</arg>
-<arg>200</arg>
+<arg>${country_Name[0]}</arg>
+<arg>Malaysia</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220816 20:02:58.738" endtime="20220816 20:02:58.739"/>
+<status status="PASS" starttime="20220816 21:48:49.885" endtime="20220816 21:48:49.887"/>
 </kw>
-<status status="PASS" starttime="20220816 20:02:58.632" endtime="20220816 20:02:58.739"/>
-</test>
-<test id="s1-t2" name="TC2:Create New User (POST)" line="20">
-<kw name="Create Session" library="RequestsLibrary">
-<arg>mysession</arg>
-<arg>${base_url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220816 20:02:58.742" level="INFO">Creating Session using : alias=mysession, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220816 20:02:58.742" endtime="20220816 20:02:58.743"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${body}</var>
-<arg>name=morpheus</arg>
-<arg>job=leader</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220816 20:02:58.744" level="INFO">${body} = {'name': 'morpheus', 'job': 'leader'}</msg>
-<status status="PASS" starttime="20220816 20:02:58.743" endtime="20220816 20:02:58.744"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${header}</var>
-<arg>content-type=application/json</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220816 20:02:58.746" level="INFO">${header} = {'content-type': 'application/json'}</msg>
-<status status="PASS" starttime="20220816 20:02:58.745" endtime="20220816 20:02:58.746"/>
-</kw>
-<kw name="POST On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/api/users</arg>
-<arg>data=${body}</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220816 20:02:59.186" level="INFO">POST Request : url=https://reqres.in/api/users 
- path_url=/api/users 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '24', 'Content-Type': 'application/x-www-form-urlencoded'} 
- body=name=morpheus&amp;job=leader 
- </msg>
-<msg timestamp="20220816 20:02:59.186" level="INFO">POST Response : url=https://reqres.in/api/users 
- status=201, reason=Created 
- headers={'Date': 'Tue, 16 Aug 2022 12:02:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '84', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"54-eB9cXlfp7wppA3Egp88qWcYHyD8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=iSpcqdkuJpt2xu3qN0ILsfz0oippZpKxU7rQWfTK8s0aOq9JUT2wB4MYuCBeex9BJM00Qtn6CWkLJsowQOmPupv%2B%2FU5le14X%2BOGBM3OZUhWdr0lVCCE0m7KJcJMnVi7rOFsDJAeyBA%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '73ba06323f33755c-KUL'} 
- body={"name":"morpheus","job":"leader","id":"715","createdAt":"2022-08-16T12:02:59.836Z"} 
- </msg>
-<msg timestamp="20220816 20:02:59.186" level="INFO">C:\Users\irfandy4hmad\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20220816 20:02:59.187" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220816 20:02:58.746" endtime="20220816 20:02:59.187"/>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${border}</var>
+<arg>${response.json()}</arg>
+<arg>$[0].borders[0]</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220816 21:48:49.944" level="INFO">${border} = ['BRN']</msg>
+<status status="PASS" starttime="20220816 21:48:49.888" endtime="20220816 21:48:49.944"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${response.status_code}</arg>
+<arg>${border[0]}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220816 20:02:59.188" endtime="20220816 20:02:59.190"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220816 20:02:59.191" endtime="20220816 20:02:59.192"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${status_code}</var>
-<arg>${response.status_code}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220816 20:02:59.194" level="INFO">${status_code} = 201</msg>
-<status status="PASS" starttime="20220816 20:02:59.193" endtime="20220816 20:02:59.194"/>
+<status status="PASS" starttime="20220816 21:48:49.944" endtime="20220816 21:48:49.947"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
-<arg>${status_code}</arg>
-<arg>201</arg>
+<arg>${border[0]}</arg>
+<arg>BRN</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220816 20:02:59.195" endtime="20220816 20:02:59.195"/>
+<status status="PASS" starttime="20220816 21:48:49.947" endtime="20220816 21:48:49.949"/>
 </kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${res_body}</var>
-<arg>${response.content}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220816 20:02:59.197" level="INFO">${res_body} = {"name":"morpheus","job":"leader","id":"715","createdAt":"2022-08-16T12:02:59.836Z"}</msg>
-<status status="PASS" starttime="20220816 20:02:59.196" endtime="20220816 20:02:59.198"/>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${borders}</var>
+<arg>${response.json()}</arg>
+<arg>$[0].borders</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220816 21:48:50.009" level="INFO">${borders} = [['BRN', 'IDN', 'THA']]</msg>
+<status status="PASS" starttime="20220816 21:48:49.949" endtime="20220816 21:48:50.009"/>
 </kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${res_body}</arg>
-<arg>createdAt</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20220816 20:02:59.198" endtime="20220816 20:02:59.199"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${borders[0]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220816 21:48:50.010" endtime="20220816 21:48:50.013"/>
 </kw>
-<status status="PASS" starttime="20220816 20:02:58.741" endtime="20220816 20:02:59.199"/>
+<kw name="Should Not Contain Any" library="BuiltIn">
+<arg>${borders[0]}</arg>
+<arg>IDD</arg>
+<arg>THD</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" starttime="20220816 21:48:50.014" endtime="20220816 21:48:50.016"/>
+</kw>
+<status status="PASS" starttime="20220816 21:48:47.528" endtime="20220816 21:48:50.017"/>
 </test>
-<test id="s1-t3" name="TC3:Get Single User (GET)" line="36">
-<kw name="Create Session" library="RequestsLibrary">
-<arg>mysession</arg>
-<arg>${base_url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220816 20:02:59.202" level="INFO">Creating Session using : alias=mysession, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220816 20:02:59.202" endtime="20220816 20:02:59.203"/>
-</kw>
-<kw name="GET On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/api/users/2</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220816 20:02:59.306" level="INFO">GET Request : url=https://reqres.in/api/users/2 
- path_url=/api/users/2 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20220816 20:02:59.306" level="INFO">GET Response : url=https://reqres.in/api/users/2 
- status=200, reason=OK 
- headers={'Date': 'Tue, 16 Aug 2022 12:03:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"118-pbdwwFo9SKNhD3Lx5iHJyngpq00"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '1167', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=bfBik7RZe3ma3C2%2BUlDd7spKxJIL1LnW1qEWEWHdtxY0OmnrDfDppuTEflRg1QLTA6Sw6LHVnScLbkP66iHRbcnlHrD%2B1Dk%2B2Hq3SYgfroSKN4vO7UkLKRWygO5OsS%2BnPqT6JIKEcQ%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '73ba06351e773907-KUL', 'Content-Encoding': 'gzip'} 
- body={"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
- </msg>
-<msg timestamp="20220816 20:02:59.306" level="INFO">C:\Users\irfandy4hmad\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20220816 20:02:59.307" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220816 20:02:59.203" endtime="20220816 20:02:59.308"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220816 20:02:59.308" endtime="20220816 20:02:59.310"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220816 20:02:59.310" endtime="20220816 20:02:59.313"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${status_code}</var>
-<arg>${response.status_code}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220816 20:02:59.315" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20220816 20:02:59.313" endtime="20220816 20:02:59.315"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${status_code}</arg>
-<arg>200</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220816 20:02:59.315" endtime="20220816 20:02:59.316"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${res_body}</var>
-<arg>${response.content}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220816 20:02:59.318" level="INFO">${res_body} = {"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","te...</msg>
-<status status="PASS" starttime="20220816 20:02:59.316" endtime="20220816 20:02:59.318"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${res_body}</arg>
-<arg>Janet</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20220816 20:02:59.318" endtime="20220816 20:02:59.319"/>
-</kw>
-<status status="PASS" starttime="20220816 20:02:59.201" endtime="20220816 20:02:59.320"/>
-</test>
-<test id="s1-t4" name="TC4:Update Existing User (PUT)" line="50">
-<kw name="Create Session" library="RequestsLibrary">
-<arg>mysession</arg>
-<arg>${base_url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220816 20:02:59.323" level="INFO">Creating Session using : alias=mysession, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220816 20:02:59.323" endtime="20220816 20:02:59.324"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${body}</var>
-<arg>name=morpheus</arg>
-<arg>job=zion resident</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220816 20:02:59.325" level="INFO">${body} = {'name': 'morpheus', 'job': 'zion resident'}</msg>
-<status status="PASS" starttime="20220816 20:02:59.324" endtime="20220816 20:02:59.325"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${header}</var>
-<arg>content-type=application/json</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220816 20:02:59.326" level="INFO">${header} = {'content-type': 'application/json'}</msg>
-<status status="PASS" starttime="20220816 20:02:59.326" endtime="20220816 20:02:59.326"/>
-</kw>
-<kw name="PUT On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/api/users/2</arg>
-<arg>data=${body}</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20220816 20:02:59.759" level="INFO">PUT Request : url=https://reqres.in/api/users/2 
- path_url=/api/users/2 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '31', 'Content-Type': 'application/x-www-form-urlencoded'} 
- body=name=morpheus&amp;job=zion+resident 
- </msg>
-<msg timestamp="20220816 20:02:59.759" level="INFO">PUT Response : url=https://reqres.in/api/users/2 
- status=200, reason=OK 
- headers={'Date': 'Tue, 16 Aug 2022 12:03:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"50-cKlMZB6Y0zKAYCHMxHlorBLG+fA"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=24kkbi5GNyQl2RPL2WK7FQIv5QbRAwCq6iilu8qzYkLHzbId%2FKHqp7VGzME6kSydFoD5G%2FfGB%2BKO9wmAUcrwn844x5zk864WhbyYZwtekBMTTT7oG5AMLICK0bKPvKKP0kGIRoOWSw%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '73ba0635dbcf7554-KUL', 'Content-Encoding': 'gzip'} 
- body={"name":"morpheus","job":"zion resident","updatedAt":"2022-08-16T12:03:00.419Z"} 
- </msg>
-<msg timestamp="20220816 20:02:59.759" level="INFO">C:\Users\irfandy4hmad\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20220816 20:02:59.760" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220816 20:02:59.327" endtime="20220816 20:02:59.760"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220816 20:02:59.761" endtime="20220816 20:02:59.762"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220816 20:02:59.763" endtime="20220816 20:02:59.765"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${status_code}</var>
-<arg>${response.status_code}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220816 20:02:59.767" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20220816 20:02:59.765" endtime="20220816 20:02:59.767"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${status_code}</arg>
-<arg>200</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220816 20:02:59.767" endtime="20220816 20:02:59.768"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${res_body}</var>
-<arg>${response.content}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220816 20:02:59.770" level="INFO">${res_body} = {"name":"morpheus","job":"zion resident","updatedAt":"2022-08-16T12:03:00.419Z"}</msg>
-<status status="PASS" starttime="20220816 20:02:59.768" endtime="20220816 20:02:59.770"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${res_body}</arg>
-<arg>updatedAt</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20220816 20:02:59.770" endtime="20220816 20:02:59.771"/>
-</kw>
-<status status="PASS" starttime="20220816 20:02:59.321" endtime="20220816 20:02:59.771"/>
-</test>
-<test id="s1-t5" name="TC5:Delete User (DELETE)" line="66">
-<kw name="Create Session" library="RequestsLibrary">
-<arg>mysession</arg>
-<arg>${base_url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220816 20:02:59.774" level="INFO">Creating Session using : alias=mysession, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220816 20:02:59.774" endtime="20220816 20:02:59.775"/>
-</kw>
-<kw name="DELETE On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/api/users/3</arg>
-<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<msg timestamp="20220816 20:03:00.218" level="INFO">DELETE Request : url=https://reqres.in/api/users/3 
- path_url=/api/users/3 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
- body=None 
- </msg>
-<msg timestamp="20220816 20:03:00.218" level="INFO">DELETE Response : url=https://reqres.in/api/users/3 
- status=204, reason=No Content 
- headers={'Date': 'Tue, 16 Aug 2022 12:03:00 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=MPzCBVs4y4FsqdROR125hNe3T1yOojDWiHm4ZKE1hqsInBxvgjhqmCoBrJdQiD6bPjf6KtLktlziNM5Cu2cJlLjRSOH%2FyaBw%2BpJy%2B7IOgfRErBQurLaCvXB2dO9nd52MW3O10nIPmw%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '73ba06389d79396f-KUL'} 
- body=None 
- </msg>
-<msg timestamp="20220816 20:03:00.218" level="INFO">C:\Users\irfandy4hmad\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20220816 20:03:00.219" level="INFO">${response} = &lt;Response [204]&gt;</msg>
-<status status="PASS" starttime="20220816 20:02:59.775" endtime="20220816 20:03:00.219"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220816 20:03:00.220" endtime="20220816 20:03:00.221"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220816 20:03:00.222" endtime="20220816 20:03:00.223"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${status_code}</var>
-<arg>${response.status_code}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220816 20:03:00.226" level="INFO">${status_code} = 204</msg>
-<status status="PASS" starttime="20220816 20:03:00.224" endtime="20220816 20:03:00.226"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${status_code}</arg>
-<arg>204</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220816 20:03:00.226" endtime="20220816 20:03:00.227"/>
-</kw>
-<status status="PASS" starttime="20220816 20:02:59.773" endtime="20220816 20:03:00.228"/>
-</test>
-<status status="PASS" starttime="20220816 20:02:58.352" endtime="20220816 20:03:00.230"/>
+<status status="PASS" starttime="20220816 21:48:46.930" endtime="20220816 21:48:50.020"/>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="5" fail="0" skip="0" id="s1" name="TC">TC</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC5 ComplexJSONValidation">TC5 ComplexJSONValidation</stat>
 </suite>
 </statistics>
 <errors>
