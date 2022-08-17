@@ -1,145 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220817 14:03:46.792" rpa="false" schemaversion="3">
-<suite id="s1" name="TC7 XMLResponse" source="C:\Users\irfandy4hmad\PycharmProjects\robotFrameworkAPIAutomation\TestCases\TC7_XMLResponse.robot">
-<test id="s1-t1" name="TestCase1" line="11">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220817 17:55:54.327" rpa="false" schemaversion="3">
+<suite id="s1" name="TC11 GoogleMapsAPI" source="C:\Users\irfandy4hmad\PycharmProjects\robotFrameworkAPIAutomation\TestCases\TC11_GoogleMapsAPI.robot">
+<test id="s1-t1" name="GoogleMapsPlacesAPITC" line="12">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220817 14:03:47.230" level="INFO">Creating Session using : alias=mysession, url=http://thomas-bayer.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220817 14:03:47.226" endtime="20220817 14:03:47.231"/>
+<msg timestamp="20220817 17:55:54.710" level="INFO">Creating Session using : alias=mysession, url=https://maps.googleapis.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220817 17:55:54.708" endtime="20220817 17:55:54.710"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${params}</var>
+<arg>location=-33.8670522,151.1957362</arg>
+<arg>radius=500</arg>
+<arg>types=food</arg>
+<arg>name=harbour</arg>
+<arg>key=${apiKey}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220817 17:55:54.713" level="INFO">${params} = {'location': '-33.8670522,151.1957362', 'radius': '500', 'types': 'food', 'name': 'harbour', 'key': 'AIzaSyDu2qgBARSGGOsO2-Frd7OpURfIp920qtQ'}</msg>
+<status status="PASS" starttime="20220817 17:55:54.711" endtime="20220817 17:55:54.713"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>mysession</arg>
-<arg>/sqlrest/CUSTOMER/15</arg>
+<arg>${req_uri}</arg>
+<arg>params=${params}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220817 14:03:47.679" level="INFO">GET Request : url=http://thomas-bayer.com/sqlrest/CUSTOMER/15 
- path_url=/sqlrest/CUSTOMER/15 
+<msg timestamp="20220817 17:55:54.867" level="INFO">GET Request : url=https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&amp;radius=500&amp;types=food&amp;name=harbour&amp;key=AIzaSyDu2qgBARSGGOsO2-Frd7OpURfIp920qtQ 
+ path_url=/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&amp;radius=500&amp;types=food&amp;name=harbour&amp;key=AIzaSyDu2qgBARSGGOsO2-Frd7OpURfIp920qtQ 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220817 14:03:47.687" level="INFO">GET Response : url=http://thomas-bayer.com/sqlrest/CUSTOMER/15 
+<msg timestamp="20220817 17:55:54.868" level="INFO">GET Response : url=https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&amp;radius=500&amp;types=food&amp;name=harbour&amp;key=AIzaSyDu2qgBARSGGOsO2-Frd7OpURfIp920qtQ 
  status=200, reason=OK 
- headers={'Server': 'Apache-Coyote/1.1', 'Content-Type': 'application/xml', 'Date': 'Wed, 17 Aug 2022 06:03:41 GMT', 'Content-Length': '227'} 
- body=&lt;?xml version="1.0"?&gt;&lt;CUSTOMER xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
-    &lt;ID&gt;15&lt;/ID&gt;
-    &lt;FIRSTNAME&gt;Bill&lt;/FIRSTNAME&gt;
-    &lt;LASTNAME&gt;Clancy&lt;/LASTNAME&gt;
-    &lt;STREET&gt;319 Upland Pl.&lt;/STREET&gt;
-    &lt;CITY&gt;Seattle&lt;/CITY&gt;
-&lt;/CUSTOMER&gt; 
+ headers={'Content-Type': 'application/json; charset=UTF-8', 'Date': 'Wed, 17 Aug 2022 09:55:55 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-cache, must-revalidate', 'Vary': 'Accept-Language', 'Content-Encoding': 'gzip', 'Server': 'scaffolding on HTTPServer2', 'X-XSS-Protection': '0', 'X-Frame-Options': 'SAMEORIGIN', 'Server-Timing': 'gfet4t7; dur=27', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'Transfer-Encoding': 'chunked'} 
+ body={
+   "error_message" : "You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started",
+   "html_attributions" : [],
+   "results" : [],
+   "status" : "REQUEST_DENIED"
+}
+ 
  </msg>
-<msg timestamp="20220817 14:03:47.687" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220817 14:03:47.235" endtime="20220817 14:03:47.687"/>
+<msg timestamp="20220817 17:55:54.868" level="INFO">C:\Users\irfandy4hmad\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'maps.googleapis.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220817 17:55:54.870" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220817 17:55:54.715" endtime="20220817 17:55:54.870"/>
 </kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${xml_string}</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220817 17:55:54.871" endtime="20220817 17:55:54.873"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220817 14:03:47.694" level="INFO">${xml_string} = &lt;?xml version="1.0"?&gt;&lt;CUSTOMER xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
-    &lt;ID&gt;15&lt;/ID&gt;
-    &lt;FIRSTNAME&gt;Bill&lt;/FIRSTNAME&gt;
-    &lt;LASTNAME&gt;Clancy&lt;/LASTNAME&gt;
-    &lt;STREET&gt;319 Upland Pl.&lt;/STREET&gt;
-    &lt;CITY...</msg>
-<status status="PASS" starttime="20220817 14:03:47.691" endtime="20220817 14:03:47.694"/>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220817 17:55:54.875" endtime="20220817 17:55:54.877"/>
 </kw>
-<kw name="Parse Xml" library="XML">
-<var>${xml_obj}</var>
-<arg>${xml_string}</arg>
-<doc>Parses the given XML file or string into an element structure.</doc>
-<msg timestamp="20220817 14:03:47.697" level="INFO">${xml_obj} = &lt;Element 'CUSTOMER' at 0x00000169BE93EC00&gt;</msg>
-<status status="PASS" starttime="20220817 14:03:47.695" endtime="20220817 14:03:47.697"/>
-</kw>
-<kw name="Element Text Should Be" library="XML">
-<arg>${xml_obj}</arg>
-<arg>15</arg>
-<arg>.//ID</arg>
-<doc>Verifies that the text of the specified element is ``expected``.</doc>
-<status status="PASS" starttime="20220817 14:03:47.698" endtime="20220817 14:03:47.699"/>
-</kw>
-<kw name="Get Child Elements" library="XML">
-<var>${child_elements}</var>
-<arg>${xml_obj}</arg>
-<doc>Returns the child elements of the specified element as a list.</doc>
-<msg timestamp="20220817 14:03:47.701" level="INFO">${child_elements} = [&lt;Element 'ID' at 0x00000169BE93EF70&gt;, &lt;Element 'FIRSTNAME' at 0x00000169BE93EF20&gt;, &lt;Element 'LASTNAME' at 0x00000169BE93EED0&gt;, &lt;Element 'STREET' at 0x00000169BE93EE80&gt;, &lt;Element 'CITY' at 0x00000169B...</msg>
-<status status="PASS" starttime="20220817 14:03:47.700" endtime="20220817 14:03:47.701"/>
-</kw>
-<kw name="Should Not Be Empty" library="BuiltIn">
-<arg>${child_elements}</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<msg timestamp="20220817 14:03:47.702" level="INFO">Length is 5</msg>
-<status status="PASS" starttime="20220817 14:03:47.702" endtime="20220817 14:03:47.703"/>
-</kw>
-<kw name="Get Element Text" library="XML">
-<var>${id}</var>
-<arg>${child_elements[0]}</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20220817 14:03:47.705" level="INFO">${id} = 15</msg>
-<status status="PASS" starttime="20220817 14:03:47.703" endtime="20220817 14:03:47.705"/>
-</kw>
-<kw name="Get Element Text" library="XML">
-<var>${fname}</var>
-<arg>${child_elements[1]}</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20220817 14:03:47.708" level="INFO">${fname} = Bill</msg>
-<status status="PASS" starttime="20220817 14:03:47.706" endtime="20220817 14:03:47.708"/>
-</kw>
-<kw name="Get Element Text" library="XML">
-<var>${lname}</var>
-<arg>${child_elements[2]}</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20220817 14:03:47.711" level="INFO">${lname} = Clancy</msg>
-<status status="PASS" starttime="20220817 14:03:47.709" endtime="20220817 14:03:47.711"/>
-</kw>
-<kw name="Get Element Text" library="XML">
-<var>${street}</var>
-<arg>${child_elements[3]}</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20220817 14:03:47.713" level="INFO">${street} = 319 Upland Pl.</msg>
-<status status="PASS" starttime="20220817 14:03:47.712" endtime="20220817 14:03:47.713"/>
-</kw>
-<kw name="Get Element Text" library="XML">
-<var>${city}</var>
-<arg>${child_elements[4]}</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20220817 14:03:47.716" level="INFO">${city} = Seattle</msg>
-<status status="PASS" starttime="20220817 14:03:47.715" endtime="20220817 14:03:47.716"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${id}</arg>
-<arg>15</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220817 14:03:47.717" endtime="20220817 14:03:47.717"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${fname}</arg>
-<arg>Bill</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220817 14:03:47.718" endtime="20220817 14:03:47.718"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${lname}</arg>
-<arg>Clancy</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220817 14:03:47.719" endtime="20220817 14:03:47.719"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${street}</arg>
-<arg>319 Upland Pl.</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220817 14:03:47.720" endtime="20220817 14:03:47.720"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${city}</arg>
-<arg>Seattle</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220817 14:03:47.722" endtime="20220817 14:03:47.724"/>
-</kw>
-<status status="PASS" starttime="20220817 14:03:47.224" endtime="20220817 14:03:47.725"/>
+<status status="PASS" starttime="20220817 17:55:54.707" endtime="20220817 17:55:54.877"/>
 </test>
-<status status="PASS" starttime="20220817 14:03:46.795" endtime="20220817 14:03:47.728"/>
+<status status="PASS" starttime="20220817 17:55:54.330" endtime="20220817 17:55:54.880"/>
 </suite>
 <statistics>
 <total>
@@ -148,7 +68,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC7 XMLResponse">TC7 XMLResponse</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC11 GoogleMapsAPI">TC11 GoogleMapsAPI</stat>
 </suite>
 </statistics>
 <errors>

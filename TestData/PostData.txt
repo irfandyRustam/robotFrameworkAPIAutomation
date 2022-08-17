@@ -1,0 +1,151 @@
+POST /express.asmx HTTP/1.1
+Host: transaction.elementexpress.com
+Content-Type: text/xml; charset=utf-8
+Content-Length: length
+SOAPAction: "https://transaction.elementexpress.com/CreditCardSale"
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <CreditCardSale xmlns="https://transaction.elementexpress.com">
+      <credentials>
+        <AccountID>string</AccountID>
+        <AccountToken>string</AccountToken>
+        <AcceptorID>string</AcceptorID>
+        <NewAccountToken>string</NewAccountToken>
+      </credentials>
+      <application>
+        <ApplicationID>string</ApplicationID>
+        <ApplicationName>string</ApplicationName>
+        <ApplicationVersion>string</ApplicationVersion>
+        <IntegrationType>string</IntegrationType>
+      </application>
+      <terminal>
+        <TerminalID>string</TerminalID>
+        <TerminalType>Unknown or PointOfSale or ECommerce or MOTO or FuelPump or ATM or Voice or Mobile or WebSite</TerminalType>
+        <CardPresentCode>UseDefault or Unknown or Present or NotPresent</CardPresentCode>
+        <CardholderPresentCode>UseDefault or Unknown or Present or NotPresent or MailOrder or PhoneOrder or StandingAuth or ECommerce</CardholderPresentCode>
+        <CardInputCode>UseDefault or Unknown or MagstripeRead or ContactlessMagstripeRead or ManualKeyed or ManualKeyedMagstripeFailure or ChipRead or ContactlessChipRead or ManualKeyedChipReadFailure or MagstripeReadChipReadFailure or MagstripeReadNonTechnicalFallback</CardInputCode>
+        <CVVPresenceCode>UseDefault or NotProvided or Provided or Illegible or CustomerIllegible</CVVPresenceCode>
+        <TerminalCapabilityCode>UseDefault or Unknown or NoTerminal or MagstripeReader or ContactlessMagstripeReader or KeyEntered or ChipReader or ContactlessChipReader</TerminalCapabilityCode>
+        <TerminalEnvironmentCode>UseDefault or NoTerminal or LocalAttended or LocalUnattended or RemoteAttended or RemoteUnattended or ECommerce</TerminalEnvironmentCode>
+        <MotoECICode>UseDefault or NotUsed or Single or Recurring or Installment or SecureECommerce or NonAuthenticatedSecureTransaction or NonAuthenticatedSecureECommerceTransaction or NonSecureECommerceTransaction or AmericanExpressToken</MotoECICode>
+        <CVVResponseType>Regular or Extended</CVVResponseType>
+        <ConsentCode>NotUsed or FaceToFace or Phone or Internet</ConsentCode>
+        <TerminalSerialNumber>string</TerminalSerialNumber>
+        <TerminalEncryptionFormat>Default or Format1 or Format2 or Format4 or Format5 or Format6 or Format7 or Format8 or Format9 or Format10 or Format11</TerminalEncryptionFormat>
+        <LaneNumber>string</LaneNumber>
+        <Model>string</Model>
+        <EMVKernelVersion>string</EMVKernelVersion>
+        <StoreCardID>string</StoreCardID>
+        <StoreCardPassword>string</StoreCardPassword>
+        <OperatorID>string</OperatorID>
+      </terminal>
+      <card>
+        <Track1Data>string</Track1Data>
+        <Track2Data>string</Track2Data>
+        <Track3Data>string</Track3Data>
+        <MagneprintData>string</MagneprintData>
+        <CardNumber>string</CardNumber>
+        <TruncatedCardNumber>string</TruncatedCardNumber>
+        <ExpirationMonth>string</ExpirationMonth>
+        <ExpirationYear>string</ExpirationYear>
+        <CardholderName>string</CardholderName>
+        <CVV>string</CVV>
+        <CAVV>string</CAVV>
+        <XID>string</XID>
+        <PINBlock>string</PINBlock>
+        <KeySerialNumber>string</KeySerialNumber>
+        <EncryptedFormat>Default or Format1 or Format2 or Format4 or Format5 or Format6 or Format7 or Format8 or Format9 or Format10 or Format11</EncryptedFormat>
+        <EncryptedTrack1Data>string</EncryptedTrack1Data>
+        <EncryptedTrack2Data>string</EncryptedTrack2Data>
+        <EncryptedCardData>string</EncryptedCardData>
+        <CardDataKeySerialNumber>string</CardDataKeySerialNumber>
+        <AVSResponseCode>string</AVSResponseCode>
+        <CVVResponseCode>string</CVVResponseCode>
+        <CAVVResponseCode>string</CAVVResponseCode>
+        <CardLogo>string</CardLogo>
+        <GiftCardSecurityCode>string</GiftCardSecurityCode>
+        <AlternateCardNumber1>string</AlternateCardNumber1>
+        <AlternateCardNumber2>string</AlternateCardNumber2>
+        <AlternateCardNumber3>string</AlternateCardNumber3>
+        <SecondaryCardNumber>string</SecondaryCardNumber>
+        <BIN>string</BIN>
+      </card>
+      <transaction>
+        <TransactionID>string</TransactionID>
+        <ClerkNumber>string</ClerkNumber>
+        <ShiftID>string</ShiftID>
+        <TransactionAmount>string</TransactionAmount>
+        <OriginalAuthorizedAmount>string</OriginalAuthorizedAmount>
+        <TotalAuthorizedAmount>string</TotalAuthorizedAmount>
+        <SalesTaxAmount>string</SalesTaxAmount>
+        <TipAmount>string</TipAmount>
+        <ApprovalNumber>string</ApprovalNumber>
+        <ReferenceNumber>string</ReferenceNumber>
+        <TicketNumber>string</TicketNumber>
+        <ReversalType>System or Full or Partial</ReversalType>
+        <MarketCode>Default or AutoRental or DirectMarketing or ECommerce or FoodRestaurant or HotelLodging or Petroleum or Retail or QSR or Grocery</MarketCode>
+        <AcquirerData>string</AcquirerData>
+        <CashBackAmount>string</CashBackAmount>
+        <BillPaymentFlag>False or True</BillPaymentFlag>
+        <DuplicateCheckDisableFlag>False or True</DuplicateCheckDisableFlag>
+        <DuplicateOverrideFlag>False or True</DuplicateOverrideFlag>
+        <RecurringFlag>False or True</RecurringFlag>
+        <CommercialCardCustomerCode>string</CommercialCardCustomerCode>
+        <ProcessorName>string</ProcessorName>
+        <TransactionStatus>string</TransactionStatus>
+        <TransactionStatusCode>string</TransactionStatusCode>
+        <HostTransactionID>string</HostTransactionID>
+        <TransactionSetupID>string</TransactionSetupID>
+        <MerchantVerificationValue>string</MerchantVerificationValue>
+        <PartialApprovedFlag>False or True</PartialApprovedFlag>
+        <ApprovedAmount>string</ApprovedAmount>
+        <CommercialCardResponseCode>string</CommercialCardResponseCode>
+        <BalanceAmount>string</BalanceAmount>
+        <BalanceCurrencyCode>string</BalanceCurrencyCode>
+        <ConvenienceFeeAmount>string</ConvenienceFeeAmount>
+        <GiftCardStatusCode>string</GiftCardStatusCode>
+        <BillPayerAccountNumber>string</BillPayerAccountNumber>
+        <GiftCardBalanceTransferCode>string</GiftCardBalanceTransferCode>
+        <EMVEncryptionFormat>Default or Format1 or Format2 or Format3 or Format4 or Format5</EMVEncryptionFormat>
+        <ReversalReason>Unknown or RejectedPartialApproval or Timeout or EditError or MACVerifyError or MACSyncError or EncryptionError or SystemError or PossibleFraud or CardRemoval or ChipDecline or TerminalError</ReversalReason>
+        <PaymentType>NotUsed or Recurring or Installment or CardHolderInitiated or CredentialsOnFile</PaymentType>
+        <NetworkTransactionID>string</NetworkTransactionID>
+        <SubmissionType>NotUsed or Initial or Subsequent or Resubmission or ReAuthorization or DelayedCharges or NoShow</SubmissionType>
+        <Notes>string</Notes>
+        <CustomerID>string</CustomerID>
+        <GiftPointsBalance>string</GiftPointsBalance>
+        <GiftRewardLevel>string</GiftRewardLevel>
+      </transaction>
+      <address>
+        <BillingName>string</BillingName>
+        <BillingAddress1>string</BillingAddress1>
+        <BillingAddress2>string</BillingAddress2>
+        <BillingCity>string</BillingCity>
+        <BillingState>string</BillingState>
+        <BillingZipcode>string</BillingZipcode>
+        <BillingEmail>string</BillingEmail>
+        <BillingPhone>string</BillingPhone>
+        <ShippingName>string</ShippingName>
+        <ShippingAddress1>string</ShippingAddress1>
+        <ShippingAddress2>string</ShippingAddress2>
+        <ShippingCity>string</ShippingCity>
+        <ShippingState>string</ShippingState>
+        <ShippingZipcode>string</ShippingZipcode>
+        <ShippingEmail>string</ShippingEmail>
+        <ShippingPhone>string</ShippingPhone>
+      </address>
+      <extendedParameters>
+        <ExtendedParameters>
+          <Key>string</Key>
+          <Value />
+        </ExtendedParameters>
+        <ExtendedParameters>
+          <Key>string</Key>
+          <Value />
+        </ExtendedParameters>
+      </extendedParameters>
+    </CreditCardSale>
+  </soap:Body>
+</soap:Envelope>
