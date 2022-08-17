@@ -1,154 +1,445 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220817 14:03:46.792" rpa="false" schemaversion="3">
-<suite id="s1" name="TC7 XMLResponse" source="C:\Users\irfandy4hmad\PycharmProjects\robotFrameworkAPIAutomation\TestCases\TC7_XMLResponse.robot">
-<test id="s1-t1" name="TestCase1" line="11">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220817 14:38:16.578" rpa="false" schemaversion="3">
+<suite id="s1" name="TC8 ValidateHeadersAndCookies" source="C:\Users\irfandy4hmad\PycharmProjects\robotFrameworkAPIAutomation\TestCases\TC8_ValidateHeadersAndCookies.robot">
+<test id="s1-t1" name="TestHeaders" line="9">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220817 14:03:47.230" level="INFO">Creating Session using : alias=mysession, url=http://thomas-bayer.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220817 14:03:47.226" endtime="20220817 14:03:47.231"/>
+<msg timestamp="20220817 14:38:16.768" level="INFO">Creating Session using : alias=mysession, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220817 14:38:16.768" endtime="20220817 14:38:16.768"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>mysession</arg>
-<arg>/sqlrest/CUSTOMER/15</arg>
+<arg>/photos</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220817 14:03:47.679" level="INFO">GET Request : url=http://thomas-bayer.com/sqlrest/CUSTOMER/15 
- path_url=/sqlrest/CUSTOMER/15 
+<msg timestamp="20220817 14:38:17.060" level="INFO">GET Request : url=https://jsonplaceholder.typicode.com/photos 
+ path_url=/photos 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220817 14:03:47.687" level="INFO">GET Response : url=http://thomas-bayer.com/sqlrest/CUSTOMER/15 
+<msg timestamp="20220817 14:38:17.062" level="INFO">GET Response : url=https://jsonplaceholder.typicode.com/photos 
  status=200, reason=OK 
- headers={'Server': 'Apache-Coyote/1.1', 'Content-Type': 'application/xml', 'Date': 'Wed, 17 Aug 2022 06:03:41 GMT', 'Content-Length': '227'} 
- body=&lt;?xml version="1.0"?&gt;&lt;CUSTOMER xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
-    &lt;ID&gt;15&lt;/ID&gt;
-    &lt;FIRSTNAME&gt;Bill&lt;/FIRSTNAME&gt;
-    &lt;LASTNAME&gt;Clancy&lt;/LASTNAME&gt;
-    &lt;STREET&gt;319 Upland Pl.&lt;/STREET&gt;
-    &lt;CITY&gt;Seattle&lt;/CITY&gt;
-&lt;/CUSTOMER&gt; 
+ headers={'Date': 'Wed, 17 Aug 2022 06:38:17 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1660703821', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"105970-HCYFejK2YCxztz8++2rHnutkPOQ"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '14528', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=C8X3Zd2MsBPJnedJZrJ7pbQgADI%2F06AX9BReksBoOHR7FFNOqqmsOFyJuWhqBPzKTZtCY16KdDaxJ3FA%2BFhlg%2F4TzPZijvSmh0cj57Qszd4GgvQHIlpdgINZi1vCTHJiID59n2FTv5tqpDMenFqhVlikzvvF73o%2FpJA8"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '73c067f00f3c87ea-SIN', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body=[
+  {
+    "albumId": 1,
+    "id": 1,
+    "title": "accusamus beatae ad facilis cum similique qui sunt",
+    "url": "https://via.placeholder.com/600/92c952",
+    "thumbnailUrl": "https://via.placeholder.com/150/92c952"
+  },
+  {
+    "albumId": 1,
+    "id": 2,
+    "title": "reprehenderit est deserunt velit ipsam",
+    "url": "https://via.placeholder.com/600/771796",
+    "thumbnailUrl": "https://via.placeholder.com/150/771796"
+  },
+  {
+    "albumId": 1,
+    "id": 3,
+    "title": "officia porro iure quia iusto qui ipsa ut modi",
+    "url": "https://via.placeholder.com/600/24f355",
+    "thumbnailUrl": "https://via.placeholder.com/150/24f355"
+  },
+  {
+    "albumId": 1,
+    "id": 4,
+    "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+    "url": "https://via.placeholder.com/600/d32776",
+    "thumbnailUrl": "https://via.placeholder.com/150/d32776"
+  },
+  {
+    "albumId": 1,
+    "id": 5,
+    "title": "natus nisi omnis corporis facere molestiae rerum in",
+    "url": "https://via.placeholder.com/600/f66b97",
+    "thumbnailUrl": "https://via.placeholder.com/150/f66b97"
+  },
+  {
+    "albumId": 1,
+    "id": 6,
+    "title": "accusamus ea aliquid et amet sequi nemo",
+    "url": "https://via.placeholder.com/600/56a8c2",
+    "thumbnailUrl": "https://via.placeholder.com/150/56a8c2"
+  },
+  {
+    "albumId": 1,
+    "id": 7,
+    "title": "officia delectus consequatur vero aut veniam explicabo molestias",
+    "url": "https://via.placeholder.com/600/b0f7cc",
+    "thumbnailUrl": "https://via.placeholder.com/150/b0f7cc"
+  },
+  {
+    "albumId": 1,
+    "id": 8,
+    "title": "aut porro officiis laborum odit ea laudantium corporis",
+    "url": "https://via.placeholder.com/600/54176f",
+    "thumbnailUrl": "https://via.placeholder.com/150/54176f"
+  },
+  {
+    "albumId": 1,
+    "id": 9,
+    "title": "qui eius qui autem sed",
+    "url": "https://via.placeholder.com/600/51aa97",
+    "thumbnailUrl": "https://via.placeholder.com/150/51aa97"
+  },
+  {
+    "albumId": 1,
+    "id": 10,
+    "title": "beatae et provident et ut vel",
+    "url": "https://via.placeholder.com/600/810b14",
+    "thumbnailUrl": "https://via.placeholder.com/150/810b14"
+  },
+  {
+    "albumId": 1,
+    "id": 11,
+    "title": "nihil at amet non hic quia qui",
+    "url": "https://via.placeholder.com/600/1ee8a4",
+    "thumbnailUrl": "https://via.placeholder.com/150/1ee8a4"
+  },
+  {
+    "albumId": 1,
+    "id": 12,
+    "title": "mollitia soluta ut rerum eos aliquam consequatur perspiciatis maiores",
+    "url": "https://via.placeholder.com/600/66b7d2",
+    "thumbnailUrl": "https://via.placeholder.com/150/66b7d2"
+  },
+  {
+    "albumId": 1,
+    "id": 13,
+    "title": "repudiandae iusto deleniti rerum",
+    "url": "https://via.placeholder.com/600/197d29",
+    "thumbnailUrl": "https://via.placeholder.com/150/197d29"
+  },
+  {
+    "albumId": 1,
+    "id": 14,
+    "title": "est necessitatibus architecto ut laborum",
+    "url": "https://via.placeholder.com/600/61a65",
+    "thumbnailUrl": "https://via.placeholder.com/150/61a65"
+  },
+  {
+    "albumId": 1,
+    "id": 15,
+    "title": "harum dicta similique quis dolore earum ex qui",
+    "url": "https://via.placeholder.com/600/f9cee5",
+    "thumbnailUrl": "https://via.placeholder.com/150/f9cee5"
+  },
+  {
+    "albumId": 1,
+    "id": 16,
+    "title": "iusto sunt nobis quasi veritatis quas expedita voluptatum deserunt",
+    "url": "https://via.placeholder.com/600/fdf73e",
+    "thumbnailUrl": "https://via.placeholder.com/150/fdf73e"
+  },
+  {
+    "albumId": 1,
+    "id": 17,
+    "title": "natus doloribus necessitatibus ipsa",
+    "url": "https://via.placeholder.com/600/9c184f",
+    "thumbnailUrl": "https://via.placeholder.com/150/9c184f"
+  },
+  {
+    "albumId": 1,
+    "id": 18,
+    "title": "laboriosam odit nam necessitatibus et illum dolores reiciendis",
+    "url": "https://via.placeholder.com/600/1fe46f",
+    "thumbnailUrl": "https://via.placeholder.com/150/1fe46f"
+  },
+  {
+    "albumId": 1,
+    "id": 19,
+    "title": "perferendis nesciunt eveniet et optio a",
+    "url": "https://via.placeholder.com/600/56acb2",
+    "thumbnailUrl": "https://via.placeholder.com/150/56acb2"
+  },
+  {
+    "albumId": 1,
+    "id": 20,
+    "title": "assumenda voluptatem laboriosam enim consequatur veniam placeat reiciendis error",
+    "url": "https://via.placeholder.com/600/8985dc",
+    "thumbnailUrl": "https://via.placeholder.com/150/8985dc"
+  },
+  {
+    "albumId": 1,
+    "id": 21,
+    "title": "ad et natus qui",
+    "url": "https://via.placeholder.com/600/5e12c6",
+    "thumbnailUrl": "https://via.placeholder.com/150/5e12c6"
+  },
+  {
+    "albumId": 1,
+    "id": 22,
+    "title": "et ea illo et sit voluptas animi blanditiis porro",
+    "url": "https://via.placeholder.com/600/45601a",
+    "thumbnailUrl": "https://via.placeholder.com/150/45601a"
+  },
+  {
+    "albumId": 1,
+    "id": 23,
+    "title": "harum velit vero totam",
+    "url": "https://via.placeholder.com/600/e924e6",
+    "thumbnailUrl": "https://via.placeholder.com/150/e924e6"
+  },
+  {
+    "albumId": 1,
+    "id": 24,
+    "title": "beatae officiis ut aut",
+    "url": "https://via.placeholder.com/600/8f209a",
+    "thumbnailUrl": "https://via.placeholder.com/150/8f209a"
+  },
+  {
+    "albumId": 1,
+    "id": 25,
+    "title": "facere non quis fuga fugit vitae",
+    "url": "https://via.placeholder.com/600/5e3a73",
+    "thumbnailUrl": "https://via.placeholder.com/150/5e3a73"
+  },
+  {
+    "albumId": 1,
+    "id": 26,
+    "title": "asperiores nobis voluptate qui",
+    "url": "https://via.placeholder.com/600/474645",
+    "thumbnailUrl": "https://via.placeholder.com/150/474645"
+  },
+  {
+    "albumId": 1,
+    "id": 27,
+    "title": "sit asperiores est quos quis nisi veniam error",
+    "url": "https://via.placeholder.com/600/c984bf",
+    "thumbnailUrl": "https://via.placeholder.com/150/c984bf"
+  },
+  {
+    "albumId": 1,
+    "id": 28,
+    "title": "non neque eligendi molestiae repudiandae illum voluptatem qui aut",
+    "url": "https://via.placeholder.com/600/392537",
+    "thumbnailUrl": "https://via.placeholder.com/150/392537"
+  },
+  {
+    "albumId": 1,
+    "id": 29,
+    "title": "aut ipsam quos ab placeat omnis",
+    "url": "https://via.placeholder.com/600/602b9e",
+    "thumbnailUrl": "https://via.placeholder.com/150/602b9e"
+  },
+  {
+    "albumId": 1,
+    "id": 30,
+    "title": "odio enim voluptatem quidem aut nihil illum",
+    "url": "https://via.placeholder.com/600/372c93",
+    "thumbnailUrl": "https://via.placeholder.com/150/372c93"
+  },
+  {
+    "albumId": 1,
+    "id": 31,
+    "title": "voluptate voluptates sequi",
+    "url": "https://via.placeholder.com/600/a7c272",
+    "thumbnailUrl": "https://via.placeholder.com/150/a7c272"
+  },
+  {
+    "albumId": 1,
+    "id": 32,
+    "title": "ad enim dignissimos voluptatem similique",
+    "url": "https://via.placeholder.com/600/c70a4d",
+    "thumbnailUrl": "https://via.placeholder.com/150/c70a4d"
+  },
+  {
+    "albumId": 1,
+    "id": 33,
+    "title": "culpa ipsam nobis qui fuga magni et mollitia",
+    "url": "https://via.placeholder.com/600/501fe1",
+    "thumbnailUrl": "https://via.placeholder.com/150/501fe1"
+  },
+  {
+    "albumId": 1,
+    "id": 34,
+    "title": "vitae est facere quia itaque adipisci perferendis id maiores",
+    "url": "https://via.placeholder.com/600/35185e",
+    "thumbnailUrl": "https://via.placeholder.com/150/35185e"
+  },
+  {
+    "albumId": 1,
+    "id": 35,
+    "title": "tenetur minus voluptatum et",
+    "url": "https://via.placeholder.com/600/c96cad",
+    "thumbnailUrl": "https://via.placeholder.com/150/c96cad"
+  },
+  {
+    "albumId": 1,
+    "id": 36,
+    "title": "expedita rerum eaque",
+    "url": "https://via.placeholder.com/600/4d564d",
+    "thumbnailUrl": "https://via.placeholder.com/150/4d564d"
+  },
+  {
+    "albumId": 1,
+    "id": 37,
+    "title": "totam voluptas iusto deserunt dolores",
+    "url": "https://via.placeholder.com/600/ea51da",
+    "thumbnailUrl": "https://via.placeholder.com/150/ea51da"
+  },
+  {
+    "albumId": 1,
+    "id": 38,
+    "title": "natus magnam iure rerum pariatur molestias dolore nisi",
+    "url": "https://via.placeholder.com/600/4f5b8d",
+    "thumbnailUrl": "https://via.placeholder.com/150/4f5b8d"
+  },
+  {
+    "albumId": 1,
+    "id": 39,
+    "title": "molestiae nam ullam et rerum doloribus",
+    "url": "https://via.placeholder.com/600/1e71a2",
+    "thumbnailUrl": "https://via.placeholder.com/150/1e71a2"
+  },
+  {
+    "albumId": 1,
+    "id": 40,
+    "title": "est quas voluptates dignissimos sint praesentium nisi recusandae",
+    "url": "https://via.placeholder.com/600/3a0b95",
+    "thumbnailUrl": "https://via.placeholder.com/150/3a0b95"
+  },
+  {
+    "albumId": 1,
+    "id": 41,
+    "title": "in voluptatem doloremque cum atque architecto deleniti",
+    "url": "https://via.placeholder.com/600/659403",
+    "thumbnailUrl": "https://via.placeholder.com/150/659403"
+  },
+  {
+    "albumId": 1,
+    "id": 42,
+    "title": "voluptatibus a autem molestias voluptas architecto culpa",
+    "url": "https://via.placeholder.com/600/ca50ac",
+    "thumbnailUrl": "https://via.placeholder.com/150/ca50ac"
+  },
+  {
+    "albumId": 1,
+    "id": 43,
+    "title": "eius hic autem ad beatae voluptas",
+    "url": "https://via.placeholder.com/600/6ad437",
+    "thumbnailUrl": "https://via.placeholder.com/150/6ad437"
+  },
+  {
+    "albumId": 1,
+    "id": 44,
+    "title": "neque eum provident et inventore sed ipsam dignissimos quo",
+    "url": "https://via.placeholder.com/600/29fe9f",
+    "thumbnailUrl": "https://via.placeholder.com/150/29fe9f"
+  },
+  {
+    "albumId": 1,
+    "id": 45,
+    "title": "praesentium fugit quis aut voluptatum commodi dolore corrupti",
+    "url": "https://via.placeholder.com/600/c4084a",
+    "thumbnailUrl": "https://via.placeholder.com/150/c4084a"
+  },
+  {
+    "albumId": 1,
+    "id": 46,
+    "title": "quidem maiores in quia fugit dolore explicabo occaecati",
+    "url": "https://via.placeholder.com/600/e9b68",
+    "thumbnailUrl": "https://via.placeholder.com/150/e9b68"
+  },
+  {
+    "albumId": 1,
+    "id": 47,
+    "title": "et soluta est",... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg timestamp="20220817 14:03:47.687" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220817 14:03:47.235" endtime="20220817 14:03:47.687"/>
+<msg timestamp="20220817 14:38:17.063" level="INFO">C:\Users\irfandy4hmad\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220817 14:38:17.064" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220817 14:38:16.769" endtime="20220817 14:38:17.064"/>
 </kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${xml_string}</var>
-<arg>${response.content}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220817 14:03:47.694" level="INFO">${xml_string} = &lt;?xml version="1.0"?&gt;&lt;CUSTOMER xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
-    &lt;ID&gt;15&lt;/ID&gt;
-    &lt;FIRSTNAME&gt;Bill&lt;/FIRSTNAME&gt;
-    &lt;LASTNAME&gt;Clancy&lt;/LASTNAME&gt;
-    &lt;STREET&gt;319 Upland Pl.&lt;/STREET&gt;
-    &lt;CITY...</msg>
-<status status="PASS" starttime="20220817 14:03:47.691" endtime="20220817 14:03:47.694"/>
-</kw>
-<kw name="Parse Xml" library="XML">
-<var>${xml_obj}</var>
-<arg>${xml_string}</arg>
-<doc>Parses the given XML file or string into an element structure.</doc>
-<msg timestamp="20220817 14:03:47.697" level="INFO">${xml_obj} = &lt;Element 'CUSTOMER' at 0x00000169BE93EC00&gt;</msg>
-<status status="PASS" starttime="20220817 14:03:47.695" endtime="20220817 14:03:47.697"/>
-</kw>
-<kw name="Element Text Should Be" library="XML">
-<arg>${xml_obj}</arg>
-<arg>15</arg>
-<arg>.//ID</arg>
-<doc>Verifies that the text of the specified element is ``expected``.</doc>
-<status status="PASS" starttime="20220817 14:03:47.698" endtime="20220817 14:03:47.699"/>
-</kw>
-<kw name="Get Child Elements" library="XML">
-<var>${child_elements}</var>
-<arg>${xml_obj}</arg>
-<doc>Returns the child elements of the specified element as a list.</doc>
-<msg timestamp="20220817 14:03:47.701" level="INFO">${child_elements} = [&lt;Element 'ID' at 0x00000169BE93EF70&gt;, &lt;Element 'FIRSTNAME' at 0x00000169BE93EF20&gt;, &lt;Element 'LASTNAME' at 0x00000169BE93EED0&gt;, &lt;Element 'STREET' at 0x00000169BE93EE80&gt;, &lt;Element 'CITY' at 0x00000169B...</msg>
-<status status="PASS" starttime="20220817 14:03:47.700" endtime="20220817 14:03:47.701"/>
-</kw>
-<kw name="Should Not Be Empty" library="BuiltIn">
-<arg>${child_elements}</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<msg timestamp="20220817 14:03:47.702" level="INFO">Length is 5</msg>
-<status status="PASS" starttime="20220817 14:03:47.702" endtime="20220817 14:03:47.703"/>
-</kw>
-<kw name="Get Element Text" library="XML">
-<var>${id}</var>
-<arg>${child_elements[0]}</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20220817 14:03:47.705" level="INFO">${id} = 15</msg>
-<status status="PASS" starttime="20220817 14:03:47.703" endtime="20220817 14:03:47.705"/>
-</kw>
-<kw name="Get Element Text" library="XML">
-<var>${fname}</var>
-<arg>${child_elements[1]}</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20220817 14:03:47.708" level="INFO">${fname} = Bill</msg>
-<status status="PASS" starttime="20220817 14:03:47.706" endtime="20220817 14:03:47.708"/>
-</kw>
-<kw name="Get Element Text" library="XML">
-<var>${lname}</var>
-<arg>${child_elements[2]}</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20220817 14:03:47.711" level="INFO">${lname} = Clancy</msg>
-<status status="PASS" starttime="20220817 14:03:47.709" endtime="20220817 14:03:47.711"/>
-</kw>
-<kw name="Get Element Text" library="XML">
-<var>${street}</var>
-<arg>${child_elements[3]}</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20220817 14:03:47.713" level="INFO">${street} = 319 Upland Pl.</msg>
-<status status="PASS" starttime="20220817 14:03:47.712" endtime="20220817 14:03:47.713"/>
-</kw>
-<kw name="Get Element Text" library="XML">
-<var>${city}</var>
-<arg>${child_elements[4]}</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20220817 14:03:47.716" level="INFO">${city} = Seattle</msg>
-<status status="PASS" starttime="20220817 14:03:47.715" endtime="20220817 14:03:47.716"/>
+<kw name="Get From Dictionary" library="Collections">
+<var>${contentTypeValue}</var>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220817 14:38:17.067" level="INFO">${contentTypeValue} = application/json; charset=utf-8</msg>
+<status status="PASS" starttime="20220817 14:38:17.065" endtime="20220817 14:38:17.067"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
-<arg>${id}</arg>
-<arg>15</arg>
+<arg>${contentTypeValue}</arg>
+<arg>application/json; charset=utf-8</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220817 14:03:47.717" endtime="20220817 14:03:47.717"/>
+<status status="PASS" starttime="20220817 14:38:17.067" endtime="20220817 14:38:17.068"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${contentEncodeValue}</var>
+<arg>${response.headers}</arg>
+<arg>Content-Encoding</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220817 14:38:17.071" level="INFO">${contentEncodeValue} = gzip</msg>
+<status status="PASS" starttime="20220817 14:38:17.069" endtime="20220817 14:38:17.072"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
-<arg>${fname}</arg>
-<arg>Bill</arg>
+<arg>${contentEncodeValue}</arg>
+<arg>gzip</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220817 14:03:47.718" endtime="20220817 14:03:47.718"/>
+<status status="PASS" starttime="20220817 14:38:17.073" endtime="20220817 14:38:17.074"/>
 </kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${lname}</arg>
-<arg>Clancy</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220817 14:03:47.719" endtime="20220817 14:03:47.719"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${street}</arg>
-<arg>319 Upland Pl.</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220817 14:03:47.720" endtime="20220817 14:03:47.720"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${city}</arg>
-<arg>Seattle</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220817 14:03:47.722" endtime="20220817 14:03:47.724"/>
-</kw>
-<status status="PASS" starttime="20220817 14:03:47.224" endtime="20220817 14:03:47.725"/>
+<status status="PASS" starttime="20220817 14:38:16.767" endtime="20220817 14:38:17.075"/>
 </test>
-<status status="PASS" starttime="20220817 14:03:46.795" endtime="20220817 14:03:47.728"/>
+<test id="s1-t2" name="TestCookies" line="21">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>https://www.google.com/</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220817 14:38:17.236" level="INFO">GET Request : url=https://www.google.com/ 
+ path_url=/ 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220817 14:38:17.236" level="INFO">GET Response : url=https://www.google.com/ 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 17 Aug 2022 06:38:17 GMT', 'Expires': '-1', 'Cache-Control': 'private, max-age=0', 'Content-Type': 'text/html; charset=ISO-8859-1', 'P3P': 'CP="This is not a P3P policy! See g.co/p3phelp for more info."', 'Content-Encoding': 'gzip', 'Server': 'gws', 'X-XSS-Protection': '0', 'X-Frame-Options': 'SAMEORIGIN', 'Set-Cookie': '1P_JAR=2022-08-17-06; expires=Fri, 16-Sep-2022 06:38:17 GMT; path=/; domain=.google.com; Secure, AEC=AakniGPfjZtlmNA_8vf_x6rYs5kMR1-3-9-kwmf64qOvatgjwIL86wFD3_I; expires=Mon, 13-Feb-2023 06:38:17 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax, NID=511=vamzqZGPNyF380zvtf4KsIVyfYX7OZm_IWcNsEy11XheHeYEUt7exYn93rU341xc05TeYwSSfvhroKN1x-3E85KsiGPSefqJ4HWB7Lwm0rjxwXxm1amZQBpQ0lxJASajjAtuyAOBEcM-fV3QwRyV-QQzO6MCMo7K_A2vUGD1PtQ; expires=Thu, 16-Feb-2023 06:38:17 GMT; path=/; domain=.google.com; HttpOnly', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'Transfer-Encoding': 'chunked'} 
+ body=&lt;!doctype html&gt;&lt;html itemscope="" itemtype="http://schema.org/WebPage" lang="en-MY"&gt;&lt;head&gt;&lt;meta content="text/html; charset=UTF-8" http-equiv="Content-Type"&gt;&lt;meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"&gt;&lt;title&gt;Google&lt;/title&gt;&lt;script nonce="iMgsKKlxvKqx_6KN8aJWMA"&gt;(function(){window.google={kEI:'2Yz8Yr-oM_aE4-EP6-SniAM',kEXPI:'0,1302536,56873,1710,4349,206,4804,2316,383,246,5,5367,1123753,1197732,741,380017,16115,28684,17572,4858,1362,284,9006,3026,2819,14764,4998,13228,3847,10622,14762,7979,2372,2709,1593,1279,2451,291,149,561,542,840,1983,214,4100,109,4011,2023,2297,14670,3229,2843,7,4811,788,19391,8780,1851,2614,3783,9359,3,576,1014,1,5445,148,11323,2652,4,1528,2304,7039,13271,11802,2658,7357,11039,7056,16786,5797,2560,4094,4052,3,3541,1,14262,27892,2,14022,2715,11401,11623,5679,1020,2381,28741,4569,6258,23416,1248,3375,2466,14968,4332,15,6075,1394,445,2,2,1,10956,6356,9242,78,8155,6582,799,2,14678,1290,872,5179,6753,7702,7,1782,140,9779,23,6865,4468,7774,5292,6900,3372,1460,5954,1980,3666,3572,308,552,983,123,700,4,1,2,2,2,2,7084,7,1,757,552,1889,2204,2629,5324,18,1801,2039,567,321,692,919,275,717,993,14,82,655,2,73,376,313,455,1325,160,658,134,490,82,364,40,339,1243,161,93,515,582,1250,621,1695,1189,113,394,172,289,665,75,68,211,506,536,298,1048,655,110,341,176,313,55,268,1276,5366952,8799656,3311,141,795,19735,1,1,346,1194,1,7,5,67,23949211,4042142,1964,2935,159,1358,9845,2375,3406,7172,1192,537,16,927975,476155',kBL:'fV0U'};google.sn='webhp';google.kHL='en-MY';})();(function(){
+var f=this||self;var h,k=[];function l(a){for(var b;a&amp;&amp;(!a.getAttribute||!(b=a.getAttribute("eid")));)a=a.parentNode;return b||h}function m(a){for(var b=null;a&amp;&amp;(!a.getAttribute||!(b=a.getAttribute("leid")));)a=a.parentNode;return b}
+function n(a,b,c,d,g){var e="";c||-1!==b.search("&amp;ei=")||(e="&amp;ei="+l(d),-1===b.search("&amp;lei=")&amp;&amp;(d=m(d))&amp;&amp;(e+="&amp;lei="+d));d="";!c&amp;&amp;f._cshid&amp;&amp;-1===b.search("&amp;cshid=")&amp;&amp;"slh"!==a&amp;&amp;(d="&amp;cshid="+f._cshid);c=c||"/"+(g||"gen_204")+"?atyp=i&amp;ct="+a+"&amp;cad="+b+e+"&amp;zx="+Date.now()+d;/^http:/i.test(c)&amp;&amp;"https:"===window.location.protocol&amp;&amp;(google.ml&amp;&amp;google.ml(Error("a"),!1,{src:c,glmm:1}),c="");return c};h=google.kEI;google.getEI=l;google.getLEI=m;google.ml=function(){return null};google.log=function(a,b,c,d,g){if(c=n(a,b,c,d,g)){a=new Image;var e=k.length;k[e]=a;a.onerror=a.onload=a.onabort=function(){delete k[e]};a.src=c}};google.logUrl=n;}).call(this);(function(){
+google.y={};google.sy=[];google.x=function(a,b){if(a)var c=a.id;else{do c=Math.random();while(google.y[c])}google.y[c]=[a,b];return!1};google.sx=function(a){google.sy.push(a)};google.lm=[];google.plm=function(a){google.lm.push.apply(google.lm,a)};google.lq=[];google.load=function(a,b,c){google.lq.push([[a],b,c])};google.loadAll=function(a,b){google.lq.push([a,b])};google.bx=!1;google.lx=function(){};}).call(this);google.f={};(function(){
+document.documentElement.addEventListener("submit",function(b){var a;if(a=b.target){var c=a.getAttribute("data-submitfalse");a="1"===c||"q"===c&amp;&amp;!a.elements.q.value?!0:!1}else a=!1;a&amp;&amp;(b.preventDefault(),b.stopPropagation())},!0);document.documentElement.addEventListener("click",function(b){var a;a:{for(a=b.target;a&amp;&amp;a!==document.documentElement;a=a.parentElement)if("A"===a.tagName){a="1"===a.getAttribute("data-nohref");break a}a=!1}a&amp;&amp;b.preventDefault()},!0);}).call(this);&lt;/script&gt;&lt;style&gt;#gbar,#guser{font-size:13px;padding-top:1px !important;}#gbar{height:22px}#guser{padding-bottom:7px !important;text-align:right}.gbh,.gbd{border-top:1px solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media all{.gb1{height:22px;margin-right:.5em;vertical-align:top}#gbar{float:left}}a.gb1,a.gb4{text-decoration:underline !important}a.gb1,a.gb4{color:#00c !important}.gbi .gb4{color:#dd8e27 !important}.gbf .gb4{color:#900 !important}
+&lt;/style&gt;&lt;style&gt;body,td,a,p,.h{font-family:arial,sans-serif}body{margin:0;overflow-y:scroll}#gog{padding:3px 8px 0}td{line-height:.8em}.gac_m td{line-height:17px}form{margin-bottom:20px}.h{color:#1558d6}em{font-weight:bold;font-style:normal}.lst{height:25px;width:496px}.gsfi,.lst{font:18px arial,sans-serif}.gsfs{font:17px arial,sans-serif}.ds{display:inline-box;display:inline-block;margin:3px 0 4px;margin-left:4px}input{font-family:inherit}body{background:#fff;color:#000}a{color:#4b11a8;text-decoration:none}a:hover,a:active{text-decoration:underline}.fl a{color:#1558d6}a:visited{color:#4b11a8}.sblc{padding-top:5px}.sblc a{display:block;margin:2px 0;margin-left:13px;font-size:11px}.lsbb{background:#f8f9fa;border:solid 1px;border-color:#dadce0 #70757a #70757a #dadce0;height:30px}.lsbb{display:block}#WqQANb a{display:inline-block;margin:0 12px}.lsb{background:url(/images/nav_logo229.png) 0 -261px repeat-x;border:none;color:#000;cursor:pointer;height:30px;margin:0;outline:0;font:15px arial,sans-serif;vertical-align:top}.lsb:active{background:#dadce0}.lst:focus{outline:none}&lt;/style&gt;&lt;script nonce="iMgsKKlxvKqx_6KN8aJWMA"&gt;(function(){window.google.erd={jsr:1,bv:1634,de:true};
+var h=this||self;var k,l=null!=(k=h.mei)?k:1,n,p=null!=(n=h.sdo)?n:!0,q=0,r,t=google.erd,v=t.jsr;google.ml=function(a,b,d,m,e){e=void 0===e?2:e;b&amp;&amp;(r=a&amp;&amp;a.message);if(google.dl)return google.dl(a,e,d),null;if(0&gt;v){window.console&amp;&amp;console.error(a,d);if(-2===v)throw a;b=!1}else b=!a||!a.message||"Error loading script"===a.message||q&gt;=l&amp;&amp;!m?!1:!0;if(!b)return null;q++;d=d||{};b=encodeURIComponent;var c="/gen_204?atyp=i&amp;ei="+b(google.kEI);google.kEXPI&amp;&amp;(c+="&amp;jexpid="+b(google.kEXPI));c+="&amp;srcpg="+b(google.sn)+"&amp;jsr="+b(t.jsr)+"&amp;bver="+b(t.bv);var f=a.lineNumber;void 0!==f&amp;&amp;(c+="&amp;line="+f);var g=
+a.fileName;g&amp;&amp;(0&lt;g.indexOf("-extension:/")&amp;&amp;(e=3),c+="&amp;script="+b(g),f&amp;&amp;g===window.location.href&amp;&amp;(f=document.documentElement.outerHTML.split("\n")[f],c+="&amp;cad="+b(f?f.substring(0,300):"No script found.")));c+="&amp;jsel="+e;for(var u in d)c+="&amp;",c+=b(u),c+="=",c+=b(d[u]);c=c+"&amp;emsg="+b(a.name+": "+a.message);c=c+"&amp;jsst="+b(a.stack||"N/A");12288&lt;=c.length&amp;&amp;(c=c.substr(0,12288));a=c;m||google.log(0,"",a);return a};window.onerror=function(a,b,d,m,e){r!==a&amp;&amp;(a=e instanceof Error?e:Error(a),void 0===d||"lineNumber"in a||(a.lineNumber=d),void 0===b||"fileName"in a||(a.fileName=b),google.ml(a,!1,void 0,!1,"SyntaxError"===a.name||"SyntaxError"===a.message.substring(0,11)||0&lt;a.message.indexOf("Script error")?2:0));r=null;p&amp;&amp;q&gt;=l&amp;&amp;(window.onerror=null)};})();&lt;/script&gt;&lt;/head&gt;&lt;body bgcolor="#fff"&gt;&lt;script nonce="iMgsKKlxvKqx_6KN8aJWMA"&gt;(function(){var src='/images/nav_logo229.png';var iesg=false;document.body.onload = function(){window.n &amp;&amp; window.n();if (document.images){new Image().src=src;}
+if (!iesg){document.f&amp;&amp;document.f.q.focus();document.gbqf&amp;&amp;document.gbqf.q.focus();}
+}
+})();&lt;/script&gt;&lt;div id="mngb"&gt;&lt;div id=gbar&gt;&lt;nobr&gt;&lt;b class=gb1&gt;Search&lt;/b&gt; &lt;a class=gb1 href="https://www.google.com.my/imghp?hl=en&amp;tab=wi"&gt;Images&lt;/a&gt; &lt;a class=gb1 href="https://maps.google.com.my/maps?hl=en&amp;tab=wl"&gt;Maps&lt;/a&gt; &lt;a class=gb1 href="https://play.google.com/?hl=en&amp;tab=w8"&gt;Play&lt;/a&gt; &lt;a class=gb1 href="https://www.youtube.com/?gl=MY&amp;tab=w1"&gt;YouTube&lt;/a&gt; &lt;a class=gb1 href="https://news.google.com/?tab=wn"&gt;News&lt;/a&gt; &lt;a class=gb1 href="https://mail.google.com/mail/?tab=wm"&gt;Gmail&lt;/a&gt; &lt;a class=gb1 href="https://drive.google.com/?tab=wo"&gt;Drive&lt;/a&gt; &lt;a class=gb1 style="text-decoration:none" href="https://www.google.com.my/intl/en/about/products?tab=wh"&gt;&lt;u&gt;More&lt;/u&gt; &amp;raquo;&lt;/a&gt;&lt;/nobr&gt;&lt;/div&gt;&lt;div id=guser width=100%&gt;&lt;nobr&gt;&lt;span id=gbn class=gbi&gt;&lt;/span&gt;&lt;span id=gbf class=gbf&gt;&lt;/span&gt;&lt;span id=gbe&gt;&lt;/span&gt;&lt;a href="http://www.google.com.my/history/optout?hl=en" class=gb4&gt;Web History&lt;/a&gt; | &lt;a  href="/preferences?hl=en" class=gb4&gt;Settings&lt;/a&gt; | &lt;a target=_top id=gb_70 href="https://accounts.google.com/ServiceLogin?hl=en&amp;passive=true&amp;continue=https://www.google.com/&amp;ec=GAZAAQ" class=gb4&gt;Sign in&lt;/a&gt;&lt;/nobr&gt;&lt;/div&gt;&lt;div class=gbh style=left:0&gt;&lt;/div&gt;&lt;div class=gbh style=right:0&gt;&lt;/div&gt;&lt;/div&gt;&lt;center&gt;&lt;br clear="all" id="lgpd"&gt;&lt;div id="lga"&gt;&lt;img alt="Google" height="92" src="/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png" style="padding:28px 0 14px" width="272" id="hplogo"&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;form action="/search" name="f"&gt;&lt;table cellpadding="0" cellspacing="0"&gt;&lt;tr valign="top"&gt;&lt;td width="25%"&gt;&amp;nbsp;&lt;/td&gt;&lt;td align="center" nowrap=""&gt;&lt;input name="ie" value="ISO-8859-1" type="hidden"&gt;&lt;input value="en-MY" name="hl" type="hidden"&gt;&lt;input name="source" type="hidden" value="hp"&gt;&lt;input name="biw" type="hidden"&gt;&lt;input name="bih" type="hidden"&gt;&lt;div class="ds" style="height:32px;margin:4px 0"&gt;&lt;input class="lst" style="margin:0;padding:5px 8px 0 6px;vertical-align:top;color:#000" autocomplete="off" value="" title="Google Search" maxlength="2048" name="q" size="57"&gt;&lt;/div&gt;&lt;br style="line-height:0"&gt;&lt;span class="ds"&gt;&lt;span class="lsbb"&gt;&lt;input class="lsb" value="Google Search" name="btnG" type="submit"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="ds"&gt;&lt;span class="lsbb"&gt;&lt;input class="lsb" id="tsuid1" value="I'm Feeling Lucky" name="btnI" type="submit"&gt;&lt;script nonce="iMgsKKlxvKqx_6KN8aJWMA"&gt;(function(){var id='tsuid1';document.getElementById(id).onclick = function(){if (this.form.q.value){this.checked = 1;if (this.form.iflsig)this.form.iflsig.disabled = false;}
+else top.location='/doodles/';};})();&lt;/script&gt;&lt;input value="AJiK0e8AAAAAYvya6QaYaQbtD2GbRdwlsyhRCCBlOC94" name="iflsig" type="hidden"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;&lt;td class="fl sblc" align="left" nowrap="" width="25%"&gt;&lt;a href="/advanced_search?hl=en-MY&amp;amp;authuser=0"&gt;Advanced search&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;input id="gbv" name="gbv" type="hidden" value="1"&gt;&lt;script nonce="iMgsKKlxvKqx_6KN8aJWMA"&gt;(function(){
+var a,b="1";if(document&amp;&amp;document.getElementById)if("undefined"!=typeof XMLHttpRequest)b="2";else if("undefined"!=typeof ActiveXObject){var c,d,e=["MSXML2.XMLHTTP.6.0","MSXML2.XMLHTTP.3.0","MSXML2.XMLHTTP","Microsoft.XMLHTTP"];for(c=0;d=e[c++];)try{new ActiveXObject(d),b="2"}catch(h){}}a=b;if("2"==a&amp;&amp;-1==location.search.indexOf("&amp;gbv=2")){var f=google.gbvu,g=document.getElementById("gbv");g&amp;&amp;(g.value=a);f&amp;&amp;wi... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220817 14:38:17.236" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220817 14:38:17.079" endtime="20220817 14:38:17.236"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${cookieValue}</var>
+<arg>${response.cookies}</arg>
+<arg>NID</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220817 14:38:17.238" level="INFO">${cookieValue} = 511=vamzqZGPNyF380zvtf4KsIVyfYX7OZm_IWcNsEy11XheHeYEUt7exYn93rU341xc05TeYwSSfvhroKN1x-3E85KsiGPSefqJ4HWB7Lwm0rjxwXxm1amZQBpQ0lxJASajjAtuyAOBEcM-fV3QwRyV-QQzO6MCMo7K_A2vUGD1PtQ</msg>
+<status status="PASS" starttime="20220817 14:38:17.237" endtime="20220817 14:38:17.238"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${cookieValue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220817 14:38:17.239" endtime="20220817 14:38:17.240"/>
+</kw>
+<status status="PASS" starttime="20220817 14:38:17.078" endtime="20220817 14:38:17.241"/>
+</test>
+<status status="PASS" starttime="20220817 14:38:16.580" endtime="20220817 14:38:17.244"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC7 XMLResponse">TC7 XMLResponse</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="TC8 ValidateHeadersAndCookies">TC8 ValidateHeadersAndCookies</stat>
 </suite>
 </statistics>
 <errors>
