@@ -1,60 +1,221 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220817 16:08:33.644" rpa="false" schemaversion="3">
-<suite id="s1" name="TC9 BasicAuthType" source="C:\Users\irfandy4hmad\PycharmProjects\robotFrameworkAPIAutomation\TestCases\TC9_BasicAuthType.robot">
-<test id="s1-t1" name="BasicAuthTest" line="9">
-<kw name="Create List" library="BuiltIn">
-<var>${auth}</var>
-<arg>postman</arg>
-<arg>password</arg>
-<doc>Returns a list containing given items.</doc>
-<msg timestamp="20220817 16:08:33.852" level="INFO">${auth} = ['postman', 'password']</msg>
-<status status="PASS" starttime="20220817 16:08:33.851" endtime="20220817 16:08:33.852"/>
-</kw>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220817 17:36:08.418" rpa="false" schemaversion="3">
+<suite id="s1" name="TC10 BearerAuthType" source="C:\Users\irfandy4hmad\PycharmProjects\robotFrameworkAPIAutomation\TestCases\TC10_BearerAuthType.robot">
+<test id="s1-t1" name="BearerAuthTest" line="11">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${base_url}</arg>
-<arg>auth=${auth}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220817 16:08:33.855" level="INFO">Creating Session using : alias=mysession, url=https://postman-echo.com, headers={},                     cookies={}, auth=&lt;requests.auth.HTTPBasicAuth object at 0x0000017E5C730CA0&gt;, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220817 16:08:33.853" endtime="20220817 16:08:33.855"/>
+<msg timestamp="20220817 17:36:08.713" level="INFO">Creating Session using : alias=mysession, url=https://transaction.elementexpress.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220817 17:36:08.712" endtime="20220817 17:36:08.714"/>
 </kw>
-<kw name="GET On Session" library="RequestsLibrary">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Authorization=${bearerToken}</arg>
+<arg>Content-Type=text/xml</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220817 17:36:08.719" level="INFO">${headers} = {'Authorization': '"Bearer E4F284BFADA11D01A52508ED7B92FFD7EE0905659F5DED06A4B73FC7739B48A287648801"', 'Content-Type': 'text/xml'}</msg>
+<status status="PASS" starttime="20220817 17:36:08.717" endtime="20220817 17:36:08.719"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${req_body}</var>
+<arg>TestData/PostData.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220817 17:36:08.721" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\irfandy4hmad\PycharmProjects\robotFrameworkAPIAutomation\TestData\PostData.txt"&gt;C:\Users\irfandy4hmad\PycharmProjects\robotFrameworkAPIAutomation\TestData\PostData.txt&lt;/a&gt;'.</msg>
+<msg timestamp="20220817 17:36:08.721" level="INFO">${req_body} = POST /express.asmx HTTP/1.1
+Host: transaction.elementexpress.com
+Content-Type: text/xml; charset=utf-8
+Content-Length: length
+SOAPAction: "https://transaction.elementexpress.com/CreditCardSale"
+
+&lt;?xml...</msg>
+<status status="PASS" starttime="20220817 17:36:08.720" endtime="20220817 17:36:08.722"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>mysession</arg>
-<arg>/basic-auth</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220817 16:08:34.939" level="INFO">GET Request : url=https://postman-echo.com/basic-auth 
- path_url=/basic-auth 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Basic cG9zdG1hbjpwYXNzd29yZA=='} 
- body=None 
+<arg>/</arg>
+<arg>data=${req_body}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220817 17:36:10.194" level="INFO">POST Request : url=https://transaction.elementexpress.com/ 
+ path_url=/ 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': '"Bearer E4F284BFADA11D01A52508ED7B92FFD7EE0905659F5DED06A4B73FC7739B48A287648801"', 'Content-Type': 'text/xml', 'Content-Length': '8608'} 
+ body=POST /express.asmx HTTP/1.1
+Host: transaction.elementexpress.com
+Content-Type: text/xml; charset=utf-8
+Content-Length: length
+SOAPAction: "https://transaction.elementexpress.com/CreditCardSale"
+
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;soap:Body&gt;
+    &lt;CreditCardSale xmlns="https://transaction.elementexpress.com"&gt;
+      &lt;credentials&gt;
+        &lt;AccountID&gt;string&lt;/AccountID&gt;
+        &lt;AccountToken&gt;string&lt;/AccountToken&gt;
+        &lt;AcceptorID&gt;string&lt;/AcceptorID&gt;
+        &lt;NewAccountToken&gt;string&lt;/NewAccountToken&gt;
+      &lt;/credentials&gt;
+      &lt;application&gt;
+        &lt;ApplicationID&gt;string&lt;/ApplicationID&gt;
+        &lt;ApplicationName&gt;string&lt;/ApplicationName&gt;
+        &lt;ApplicationVersion&gt;string&lt;/ApplicationVersion&gt;
+        &lt;IntegrationType&gt;string&lt;/IntegrationType&gt;
+      &lt;/application&gt;
+      &lt;terminal&gt;
+        &lt;TerminalID&gt;string&lt;/TerminalID&gt;
+        &lt;TerminalType&gt;Unknown or PointOfSale or ECommerce or MOTO or FuelPump or ATM or Voice or Mobile or WebSite&lt;/TerminalType&gt;
+        &lt;CardPresentCode&gt;UseDefault or Unknown or Present or NotPresent&lt;/CardPresentCode&gt;
+        &lt;CardholderPresentCode&gt;UseDefault or Unknown or Present or NotPresent or MailOrder or PhoneOrder or StandingAuth or ECommerce&lt;/CardholderPresentCode&gt;
+        &lt;CardInputCode&gt;UseDefault or Unknown or MagstripeRead or ContactlessMagstripeRead or ManualKeyed or ManualKeyedMagstripeFailure or ChipRead or ContactlessChipRead or ManualKeyedChipReadFailure or MagstripeReadChipReadFailure or MagstripeReadNonTechnicalFallback&lt;/CardInputCode&gt;
+        &lt;CVVPresenceCode&gt;UseDefault or NotProvided or Provided or Illegible or CustomerIllegible&lt;/CVVPresenceCode&gt;
+        &lt;TerminalCapabilityCode&gt;UseDefault or Unknown or NoTerminal or MagstripeReader or ContactlessMagstripeReader or KeyEntered or ChipReader or ContactlessChipReader&lt;/TerminalCapabilityCode&gt;
+        &lt;TerminalEnvironmentCode&gt;UseDefault or NoTerminal or LocalAttended or LocalUnattended or RemoteAttended or RemoteUnattended or ECommerce&lt;/TerminalEnvironmentCode&gt;
+        &lt;MotoECICode&gt;UseDefault or NotUsed or Single or Recurring or Installment or SecureECommerce or NonAuthenticatedSecureTransaction or NonAuthenticatedSecureECommerceTransaction or NonSecureECommerceTransaction or AmericanExpressToken&lt;/MotoECICode&gt;
+        &lt;CVVResponseType&gt;Regular or Extended&lt;/CVVResponseType&gt;
+        &lt;ConsentCode&gt;NotUsed or FaceToFace or Phone or Internet&lt;/ConsentCode&gt;
+        &lt;TerminalSerialNumber&gt;string&lt;/TerminalSerialNumber&gt;
+        &lt;TerminalEncryptionFormat&gt;Default or Format1 or Format2 or Format4 or Format5 or Format6 or Format7 or Format8 or Format9 or Format10 or Format11&lt;/TerminalEncryptionFormat&gt;
+        &lt;LaneNumber&gt;string&lt;/LaneNumber&gt;
+        &lt;Model&gt;string&lt;/Model&gt;
+        &lt;EMVKernelVersion&gt;string&lt;/EMVKernelVersion&gt;
+        &lt;StoreCardID&gt;string&lt;/StoreCardID&gt;
+        &lt;StoreCardPassword&gt;string&lt;/StoreCardPassword&gt;
+        &lt;OperatorID&gt;string&lt;/OperatorID&gt;
+      &lt;/terminal&gt;
+      &lt;card&gt;
+        &lt;Track1Data&gt;string&lt;/Track1Data&gt;
+        &lt;Track2Data&gt;string&lt;/Track2Data&gt;
+        &lt;Track3Data&gt;string&lt;/Track3Data&gt;
+        &lt;MagneprintData&gt;string&lt;/MagneprintData&gt;
+        &lt;CardNumber&gt;string&lt;/CardNumber&gt;
+        &lt;TruncatedCardNumber&gt;string&lt;/TruncatedCardNumber&gt;
+        &lt;ExpirationMonth&gt;string&lt;/ExpirationMonth&gt;
+        &lt;ExpirationYear&gt;string&lt;/ExpirationYear&gt;
+        &lt;CardholderName&gt;string&lt;/CardholderName&gt;
+        &lt;CVV&gt;string&lt;/CVV&gt;
+        &lt;CAVV&gt;string&lt;/CAVV&gt;
+        &lt;XID&gt;string&lt;/XID&gt;
+        &lt;PINBlock&gt;string&lt;/PINBlock&gt;
+        &lt;KeySerialNumber&gt;string&lt;/KeySerialNumber&gt;
+        &lt;EncryptedFormat&gt;Default or Format1 or Format2 or Format4 or Format5 or Format6 or Format7 or Format8 or Format9 or Format10 or Format11&lt;/EncryptedFormat&gt;
+        &lt;EncryptedTrack1Data&gt;string&lt;/EncryptedTrack1Data&gt;
+        &lt;EncryptedTrack2Data&gt;string&lt;/EncryptedTrack2Data&gt;
+        &lt;EncryptedCardData&gt;string&lt;/EncryptedCardData&gt;
+        &lt;CardDataKeySerialNumber&gt;string&lt;/CardDataKeySerialNumber&gt;
+        &lt;AVSResponseCode&gt;string&lt;/AVSResponseCode&gt;
+        &lt;CVVResponseCode&gt;string&lt;/CVVResponseCode&gt;
+        &lt;CAVVResponseCode&gt;string&lt;/CAVVResponseCode&gt;
+        &lt;CardLogo&gt;string&lt;/CardLogo&gt;
+        &lt;GiftCardSecurityCode&gt;string&lt;/GiftCardSecurityCode&gt;
+        &lt;AlternateCardNumber1&gt;string&lt;/AlternateCardNumber1&gt;
+        &lt;AlternateCardNumber2&gt;string&lt;/AlternateCardNumber2&gt;
+        &lt;AlternateCardNumber3&gt;string&lt;/AlternateCardNumber3&gt;
+        &lt;SecondaryCardNumber&gt;string&lt;/SecondaryCardNumber&gt;
+        &lt;BIN&gt;string&lt;/BIN&gt;
+      &lt;/card&gt;
+      &lt;transaction&gt;
+        &lt;TransactionID&gt;string&lt;/TransactionID&gt;
+        &lt;ClerkNumber&gt;string&lt;/ClerkNumber&gt;
+        &lt;ShiftID&gt;string&lt;/ShiftID&gt;
+        &lt;TransactionAmount&gt;string&lt;/TransactionAmount&gt;
+        &lt;OriginalAuthorizedAmount&gt;string&lt;/OriginalAuthorizedAmount&gt;
+        &lt;TotalAuthorizedAmount&gt;string&lt;/TotalAuthorizedAmount&gt;
+        &lt;SalesTaxAmount&gt;string&lt;/SalesTaxAmount&gt;
+        &lt;TipAmount&gt;string&lt;/TipAmount&gt;
+        &lt;ApprovalNumber&gt;string&lt;/ApprovalNumber&gt;
+        &lt;ReferenceNumber&gt;string&lt;/ReferenceNumber&gt;
+        &lt;TicketNumber&gt;string&lt;/TicketNumber&gt;
+        &lt;ReversalType&gt;System or Full or Partial&lt;/ReversalType&gt;
+        &lt;MarketCode&gt;Default or AutoRental or DirectMarketing or ECommerce or FoodRestaurant or HotelLodging or Petroleum or Retail or QSR or Grocery&lt;/MarketCode&gt;
+        &lt;AcquirerData&gt;string&lt;/AcquirerData&gt;
+        &lt;CashBackAmount&gt;string&lt;/CashBackAmount&gt;
+        &lt;BillPaymentFlag&gt;False or True&lt;/BillPaymentFlag&gt;
+        &lt;DuplicateCheckDisableFlag&gt;False or True&lt;/DuplicateCheckDisableFlag&gt;
+        &lt;DuplicateOverrideFlag&gt;False or True&lt;/DuplicateOverrideFlag&gt;
+        &lt;RecurringFlag&gt;False or True&lt;/RecurringFlag&gt;
+        &lt;CommercialCardCustomerCode&gt;string&lt;/CommercialCardCustomerCode&gt;
+        &lt;ProcessorName&gt;string&lt;/ProcessorName&gt;
+        &lt;TransactionStatus&gt;string&lt;/TransactionStatus&gt;
+        &lt;TransactionStatusCode&gt;string&lt;/TransactionStatusCode&gt;
+        &lt;HostTransactionID&gt;string&lt;/HostTransactionID&gt;
+        &lt;TransactionSetupID&gt;string&lt;/TransactionSetupID&gt;
+        &lt;MerchantVerificationValue&gt;string&lt;/MerchantVerificationValue&gt;
+        &lt;PartialApprovedFlag&gt;False or True&lt;/PartialApprovedFlag&gt;
+        &lt;ApprovedAmount&gt;string&lt;/ApprovedAmount&gt;
+        &lt;CommercialCardResponseCode&gt;string&lt;/CommercialCardResponseCode&gt;
+        &lt;BalanceAmount&gt;string&lt;/BalanceAmount&gt;
+        &lt;BalanceCurrencyCode&gt;string&lt;/BalanceCurrencyCode&gt;
+        &lt;ConvenienceFeeAmount&gt;string&lt;/ConvenienceFeeAmount&gt;
+        &lt;GiftCardStatusCode&gt;string&lt;/GiftCardStatusCode&gt;
+        &lt;BillPayerAccountNumber&gt;string&lt;/BillPayerAccountNumber&gt;
+        &lt;GiftCardBalanceTransferCode&gt;string&lt;/GiftCardBalanceTransferCode&gt;
+        &lt;EMVEncryptionFormat&gt;Default or Format1 or Format2 or Format3 or Format4 or Format5&lt;/EMVEncryptionFormat&gt;
+        &lt;ReversalReason&gt;Unknown or RejectedPartialApproval or Timeout or EditError or MACVerifyError or MACSyncError or EncryptionError or SystemError or PossibleFraud or CardRemoval or ChipDecline or TerminalError&lt;/ReversalReason&gt;
+        &lt;PaymentType&gt;NotUsed or Recurring or Installment or CardHolderInitiated or CredentialsOnFile&lt;/PaymentType&gt;
+        &lt;NetworkTransactionID&gt;string&lt;/NetworkTransactionID&gt;
+        &lt;SubmissionType&gt;NotUsed or Initial or Subsequent or Resubmission or ReAuthorization or DelayedCharges or NoShow&lt;/SubmissionType&gt;
+        &lt;Notes&gt;string&lt;/Notes&gt;
+        &lt;CustomerID&gt;string&lt;/CustomerID&gt;
+        &lt;GiftPointsBalance&gt;string&lt;/GiftPointsBalance&gt;
+        &lt;GiftRewardLevel&gt;string&lt;/GiftRewardLevel&gt;
+      &lt;/transaction&gt;
+      &lt;address&gt;
+        &lt;BillingName&gt;string&lt;/BillingName&gt;
+        &lt;BillingAddress1&gt;string&lt;/BillingAddress1&gt;
+        &lt;BillingAddress2&gt;string&lt;/BillingAddress2&gt;
+        &lt;BillingCity&gt;string&lt;/BillingCity&gt;
+        &lt;BillingState&gt;string&lt;/BillingState&gt;
+        &lt;BillingZipcode&gt;string&lt;/BillingZipcode&gt;
+        &lt;BillingEmail&gt;string&lt;/BillingEmail&gt;
+        &lt;BillingPhone&gt;string&lt;/BillingPhone&gt;
+        &lt;ShippingName&gt;string&lt;/ShippingName&gt;
+        &lt;ShippingAddress1&gt;string&lt;/ShippingAddress1&gt;
+        &lt;ShippingAddress2&gt;string&lt;/ShippingAddress2&gt;
+        &lt;ShippingCity&gt;string&lt;/ShippingCity&gt;
+        &lt;ShippingState&gt;string&lt;/ShippingState&gt;
+        &lt;ShippingZipcode&gt;string&lt;/ShippingZipcode&gt;
+        &lt;ShippingEmail&gt;string&lt;/ShippingEmail&gt;
+        &lt;ShippingPhone&gt;string&lt;/ShippingPhone&gt;
+      &lt;/address&gt;
+      &lt;extendedParameters&gt;
+        &lt;ExtendedParameters&gt;
+          &lt;Key&gt;string&lt;/Key&gt;
+          &lt;Value /&gt;
+        &lt;/ExtendedParameters&gt;
+        &lt;ExtendedParameters&gt;
+          &lt;Key&gt;string&lt;/Key&gt;
+          &lt;Value /&gt;
+        &lt;/ExtendedParameters&gt;
+      &lt;/extendedParameters&gt;
+    &lt;/CreditCardSale&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt; 
  </msg>
-<msg timestamp="20220817 16:08:34.939" level="INFO">GET Response : url=https://postman-echo.com/basic-auth 
- status=200, reason=OK 
- headers={'Date': 'Wed, 17 Aug 2022 08:08:35 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '22', 'Connection': 'keep-alive', 'ETag': 'W/"16-sJz8uwjdDv0wvm7//BYdNw8vMbU"', 'Vary': 'Accept-Encoding', 'set-cookie': 'sails.sid=s%3AYznEE1PtP_CJo4XMdaXb3VB3V5qoxwkd.pOYDdzqO5MI4DVG47mXdCOvBjtnA7%2BVR4mDvXDpAZEA; Path=/; HttpOnly'} 
- body={"authenticated":true} 
+<msg timestamp="20220817 17:36:10.195" level="INFO">POST Response : url=https://transaction.elementexpress.com/ 
+ status=200, reason=200 OK 
+ headers={'Cache-Control': 'private', 'Transfer-Encoding': 'chunked', 'Content-Type': 'text/xml; charset=utf-8', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'X-Frame-Options': 'DENY', 'Date': 'Wed, 17 Aug 2022 09:36:10 GMT'} 
+ body=&lt;Response xmlns='https://transaction.elementexpress.com'&gt;&lt;Response&gt;&lt;ExpressResponseCode&gt;103&lt;/ExpressResponseCode&gt;&lt;ExpressResponseMessage&gt;Data at the root level is invalid. Line 1, position 1.&lt;/ExpressResponseMessage&gt;&lt;/Response&gt;&lt;/Response&gt; 
  </msg>
-<msg timestamp="20220817 16:08:34.940" level="INFO">C:\Users\irfandy4hmad\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'postman-echo.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20220817 17:36:10.196" level="INFO">C:\Users\irfandy4hmad\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'transaction.elementexpress.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20220817 16:08:34.940" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220817 16:08:33.856" endtime="20220817 16:08:34.940"/>
+<msg timestamp="20220817 17:36:10.198" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220817 17:36:08.723" endtime="20220817 17:36:10.198"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220817 17:36:10.199" endtime="20220817 17:36:10.202"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220817 16:08:34.941" endtime="20220817 16:08:34.942"/>
+<status status="PASS" starttime="20220817 17:36:10.204" endtime="20220817 17:36:10.208"/>
 </kw>
-<kw name="Should Be Equal As Strings" library="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220817 16:08:34.944" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20220817 16:08:34.944" endtime="20220817 16:08:34.945"/>
-</kw>
-<status status="PASS" starttime="20220817 16:08:33.850" endtime="20220817 16:08:34.945"/>
+<status status="PASS" starttime="20220817 17:36:08.710" endtime="20220817 17:36:10.210"/>
 </test>
-<status status="PASS" starttime="20220817 16:08:33.647" endtime="20220817 16:08:34.948"/>
+<status status="PASS" starttime="20220817 17:36:08.420" endtime="20220817 17:36:10.214"/>
 </suite>
 <statistics>
 <total>
@@ -63,7 +224,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC9 BasicAuthType">TC9 BasicAuthType</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC10 BearerAuthType">TC10 BearerAuthType</stat>
 </suite>
 </statistics>
 <errors>
