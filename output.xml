@@ -1,95 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220816 21:48:46.926" rpa="false" schemaversion="3">
-<suite id="s1" name="TC5 ComplexJSONValidation" source="C:\Users\irfandy4hmad\PycharmProjects\robotFrameworkAPIAutomation\TestCases\TC5_ComplexJSONValidation.robot">
-<test id="s1-t1" name="Get_CountryInfo:" line="11">
-<kw name="Create Session" library="RequestsLibrary">
-<arg>mysession</arg>
-<arg>${base_url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220816 21:48:47.530" level="INFO">Creating Session using : alias=mysession, url=https://restcountries.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220816 21:48:47.529" endtime="20220816 21:48:47.532"/>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220817 13:52:46.224" rpa="false" schemaversion="3">
+<suite id="s1" name="TC6 XML" source="C:\Users\irfandy4hmad\PycharmProjects\robotFrameworkAPIAutomation\TestCases\TC6_XML.robot">
+<test id="s1-t1" name="TestCase1" line="7">
+<kw name="Parse Xml" library="XML">
+<var>${xml_obj}</var>
+<arg>TestData/employees.xml</arg>
+<doc>Parses the given XML file or string into an element structure.</doc>
+<msg timestamp="20220817 13:52:46.314" level="INFO">${xml_obj} = &lt;Element 'employees' at 0x00000245280359E0&gt;</msg>
+<status status="PASS" starttime="20220817 13:52:46.313" endtime="20220817 13:52:46.314"/>
 </kw>
-<kw name="GET On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/v3.1/alpha/MY</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220816 21:48:49.823" level="INFO">GET Request : url=https://restcountries.com/v3.1/alpha/MY 
- path_url=/v3.1/alpha/MY 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20220816 21:48:49.824" level="INFO">GET Response : url=https://restcountries.com/v3.1/alpha/MY 
- status=200, reason=OK 
- headers={'Date': 'Tue, 16 Aug 2022 13:48:50 GMT', 'Server': 'Apache/2.4.38 (Debian)', 'Content-Type': 'application/json', 'content-encoding': 'gzip', 'content-length': '1125', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive'} 
- body=[{"name":{"common":"Malaysia","official":"Malaysia","nativeName":{"eng":{"official":"Malaysia","common":"Malaysia"},"msa":{"official":"مليسيا","common":"مليسيا"}}},"tld":[".my"],"cca2":"MY","ccn3":"458","cca3":"MYS","cioc":"MAS","independent":true,"status":"officially-assigned","unMember":true,"currencies":{"MYR":{"name":"Malaysian ringgit","symbol":"RM"}},"idd":{"root":"+6","suffixes":["0"]},"capital":["Kuala Lumpur"],"altSpellings":["MY"],"region":"Asia","subregion":"South-Eastern Asia","languages":{"eng":"English","msa":"Malay"},"translations":{"ara":{"official":"ماليزيا","common":"ماليزيا"},"ces":{"official":"Malajsie","common":"Malajsie"},"cym":{"official":"Malaysia","common":"Malaysia"},"deu":{"official":"Malaysia","common":"Malaysia"},"est":{"official":"Malaisia","common":"Malaisia"},"fin":{"official":"Malesia","common":"Malesia"},"fra":{"official":"Fédération de Malaisie","common":"Malaisie"},"hrv":{"official":"Malezija","common":"Malezija"},"hun":{"official":"Malajzia","common":"Malajzia"},"ita":{"official":"Malaysia","common":"Malesia"},"jpn":{"official":"マレーシア","common":"マレーシア"},"kor":{"official":"말레이시아","common":"말레이시아"},"nld":{"official":"Maleisië","common":"Maleisië"},"per":{"official":"فدراسیون مالزی","common":"مالزی"},"pol":{"official":"Malezja","common":"Malezja"},"por":{"official":"Malásia","common":"Malásia"},"rus":{"official":"Малайзия","common":"Малайзия"},"slk":{"official":"Malajzia","common":"Malajzia"},"spa":{"official":"Malasia","common":"Malasia"},"swe":{"official":"Malaysia","common":"Malaysia"},"urd":{"official":"ملائیشیا","common":"ملائیشیا"},"zho":{"official":"马来西亚","common":"马来西亚"}},"latlng":[2.5,112.5],"landlocked":false,"borders":["BRN","IDN","THA"],"area":330803.0,"demonyms":{"eng":{"f":"Malaysian","m":"Malaysian"},"fra":{"f":"Malaisienne","m":"Malaisien"}},"flag":"\uD83C\uDDF2\uD83C\uDDFE","maps":{"googleMaps":"https://goo.gl/maps/qrY1PNeUXGyXDcPy6","openStreetMaps":"https://www.openstreetmap.org/relation/2108121"},"population":32365998,"gini":{"2015":41.1},"fifa":"MAS","car":{"signs":["MAL"],"side":"left"},"timezones":["UTC+08:00"],"continents":["Asia"],"flags":{"png":"https://flagcdn.com/w320/my.png","svg":"https://flagcdn.com/my.svg"},"coatOfArms":{"png":"https://mainfacts.com/media/images/coats_of_arms/my.png","svg":"https://mainfacts.com/media/images/coats_of_arms/my.svg"},"startOfWeek":"sunday","capitalInfo":{"latlng":[3.17,101.7]},"postalCode":{"format":"#####","regex":"^(\\d{5})$"}}] 
- </msg>
-<msg timestamp="20220816 21:48:49.824" level="INFO">C:\Users\irfandy4hmad\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restcountries.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20220816 21:48:49.826" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220816 21:48:47.533" endtime="20220816 21:48:49.826"/>
-</kw>
-<kw name="Get Value From Json" library="JSONLibrary">
-<var>${country_Name}</var>
-<arg>${response.json()}</arg>
-<arg>$[0].name.official</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<msg timestamp="20220816 21:48:49.878" level="INFO">${country_Name} = ['Malaysia']</msg>
-<status status="PASS" starttime="20220816 21:48:49.827" endtime="20220816 21:48:49.878"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${country_Name[0]}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220816 21:48:49.883" endtime="20220816 21:48:49.885"/>
+<kw name="Get Element Text" library="XML">
+<var>${emp_firstname}</var>
+<arg>${xml_obj}</arg>
+<arg>.//employee[1]/firstname</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20220817 13:52:46.315" level="INFO">${emp_firstname} = John</msg>
+<status status="PASS" starttime="20220817 13:52:46.315" endtime="20220817 13:52:46.315"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
-<arg>${country_Name[0]}</arg>
-<arg>Malaysia</arg>
+<arg>${emp_firstname}</arg>
+<arg>John</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220816 21:48:49.885" endtime="20220816 21:48:49.887"/>
+<status status="PASS" starttime="20220817 13:52:46.316" endtime="20220817 13:52:46.316"/>
 </kw>
-<kw name="Get Value From Json" library="JSONLibrary">
-<var>${border}</var>
-<arg>${response.json()}</arg>
-<arg>$[0].borders[0]</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<msg timestamp="20220816 21:48:49.944" level="INFO">${border} = ['BRN']</msg>
-<status status="PASS" starttime="20220816 21:48:49.888" endtime="20220816 21:48:49.944"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${border[0]}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220816 21:48:49.944" endtime="20220816 21:48:49.947"/>
+<kw name="Get Element" library="XML">
+<var>${emp_firstname}</var>
+<arg>${xml_obj}</arg>
+<arg>.//employee[1]/firstname</arg>
+<doc>Returns an element in the ``source`` matching the ``xpath``.</doc>
+<msg timestamp="20220817 13:52:46.317" level="INFO">${emp_firstname} = &lt;Element 'firstname' at 0x0000024528035A80&gt;</msg>
+<status status="PASS" starttime="20220817 13:52:46.317" endtime="20220817 13:52:46.317"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
-<arg>${border[0]}</arg>
-<arg>BRN</arg>
+<arg>${emp_firstname.text}</arg>
+<arg>John</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220816 21:48:49.947" endtime="20220816 21:48:49.949"/>
+<status status="PASS" starttime="20220817 13:52:46.317" endtime="20220817 13:52:46.318"/>
 </kw>
-<kw name="Get Value From Json" library="JSONLibrary">
-<var>${borders}</var>
-<arg>${response.json()}</arg>
-<arg>$[0].borders</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<msg timestamp="20220816 21:48:50.009" level="INFO">${borders} = [['BRN', 'IDN', 'THA']]</msg>
-<status status="PASS" starttime="20220816 21:48:49.949" endtime="20220816 21:48:50.009"/>
+<kw name="Element Text Should Be" library="XML">
+<arg>${xml_obj}</arg>
+<arg>John</arg>
+<arg>.//employee[1]/firstname</arg>
+<doc>Verifies that the text of the specified element is ``expected``.</doc>
+<status status="PASS" starttime="20220817 13:52:46.319" endtime="20220817 13:52:46.319"/>
+</kw>
+<kw name="Get Element Count" library="XML">
+<var>${emp_count}</var>
+<arg>${xml_obj}</arg>
+<arg>.//employee</arg>
+<doc>Returns and logs how many elements the given ``xpath`` matches.</doc>
+<msg timestamp="20220817 13:52:46.319" level="INFO">4 elements matched './/employee'.</msg>
+<msg timestamp="20220817 13:52:46.320" level="INFO">${emp_count} = 4</msg>
+<status status="PASS" starttime="20220817 13:52:46.319" endtime="20220817 13:52:46.320"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${emp_count}</arg>
+<arg>4</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20220817 13:52:46.320" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220817 13:52:46.320" endtime="20220817 13:52:46.320"/>
+</kw>
+<kw name="Element Attribute Should Be" library="XML">
+<arg>${xml_obj}</arg>
+<arg>id</arg>
+<arg>be129</arg>
+<arg>.//employee[1]</arg>
+<doc>Verifies that the specified attribute is ``expected``.</doc>
+<status status="PASS" starttime="20220817 13:52:46.321" endtime="20220817 13:52:46.321"/>
+</kw>
+<kw name="Element Attribute Should Be" library="XML">
+<arg>${xml_obj}</arg>
+<arg>id</arg>
+<arg>be132</arg>
+<arg>.//employee[4]</arg>
+<doc>Verifies that the specified attribute is ``expected``.</doc>
+<status status="PASS" starttime="20220817 13:52:46.322" endtime="20220817 13:52:46.322"/>
+</kw>
+<kw name="Get Child Elements" library="XML">
+<var>${child_elements}</var>
+<arg>${xml_obj}</arg>
+<arg>.//employee[1]</arg>
+<doc>Returns the child elements of the specified element as a list.</doc>
+<msg timestamp="20220817 13:52:46.324" level="INFO">${child_elements} = [&lt;Element 'firstname' at 0x0000024528035A80&gt;, &lt;Element 'lastname' at 0x0000024528035AD0&gt;, &lt;Element 'title' at 0x0000024528035B20&gt;, &lt;Element 'division' at 0x0000024528035B70&gt;, &lt;Element 'building' at 0x...</msg>
+<status status="PASS" starttime="20220817 13:52:46.323" endtime="20220817 13:52:46.324"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${child_elements}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20220817 13:52:46.325" level="INFO">Length is 6</msg>
+<status status="PASS" starttime="20220817 13:52:46.325" endtime="20220817 13:52:46.325"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${fname}</var>
+<arg>${child_elements[0]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20220817 13:52:46.328" level="INFO">${fname} = John</msg>
+<status status="PASS" starttime="20220817 13:52:46.326" endtime="20220817 13:52:46.329"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${lname}</var>
+<arg>${child_elements[1]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20220817 13:52:46.332" level="INFO">${lname} = Doe</msg>
+<status status="PASS" starttime="20220817 13:52:46.330" endtime="20220817 13:52:46.332"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${title}</var>
+<arg>${child_elements[2]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20220817 13:52:46.333" level="INFO">${title} = Engineer</msg>
+<status status="PASS" starttime="20220817 13:52:46.332" endtime="20220817 13:52:46.333"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${borders[0]}</arg>
+<arg>${fname}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220816 21:48:50.010" endtime="20220816 21:48:50.013"/>
+<status status="PASS" starttime="20220817 13:52:46.334" endtime="20220817 13:52:46.334"/>
 </kw>
-<kw name="Should Not Contain Any" library="BuiltIn">
-<arg>${borders[0]}</arg>
-<arg>IDD</arg>
-<arg>THD</arg>
-<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
-<status status="PASS" starttime="20220816 21:48:50.014" endtime="20220816 21:48:50.016"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${lname}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220817 13:52:46.335" endtime="20220817 13:52:46.335"/>
 </kw>
-<status status="PASS" starttime="20220816 21:48:47.528" endtime="20220816 21:48:50.017"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${title}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220817 13:52:46.336" endtime="20220817 13:52:46.336"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${fname}</arg>
+<arg>John</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220817 13:52:46.337" endtime="20220817 13:52:46.337"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${lname}</arg>
+<arg>Doe</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220817 13:52:46.338" endtime="20220817 13:52:46.338"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${title}</arg>
+<arg>Engineer</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220817 13:52:46.339" endtime="20220817 13:52:46.339"/>
+</kw>
+<status status="PASS" starttime="20220817 13:52:46.312" endtime="20220817 13:52:46.340"/>
 </test>
-<status status="PASS" starttime="20220816 21:48:46.930" endtime="20220816 21:48:50.020"/>
+<status status="PASS" starttime="20220817 13:52:46.226" endtime="20220817 13:52:46.341"/>
 </suite>
 <statistics>
 <total>
@@ -98,7 +157,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC5 ComplexJSONValidation">TC5 ComplexJSONValidation</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC6 XML">TC6 XML</stat>
 </suite>
 </statistics>
 <errors>

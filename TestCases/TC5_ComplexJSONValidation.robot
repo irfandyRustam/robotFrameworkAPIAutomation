@@ -5,10 +5,10 @@ Library    Collections
 Library    RequestsLibrary
 
 *** Variables ***
-${base_url}     https://restcountries.com/
+${base_url}     https://restcountries.com
 
 *** Test Cases ***
-Get_CountryInfo:
+Get_CountryInfo
     create session    mysession     ${base_url}
     ${response}=    get on session    mysession     /v3.1/alpha/MY
 #    ${json_object}=   to json   ${response.content}

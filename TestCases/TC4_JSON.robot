@@ -4,7 +4,7 @@ Library    os
 Library    Collections
 
 *** Test Cases ***
-TC1:
+TC1
     ${json_obj}=     load json from file    TestData/jsondata.json
 
     ${name_value}=    get value from json    ${json_obj}      $.firstName
