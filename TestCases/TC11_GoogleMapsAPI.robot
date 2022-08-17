@@ -6,7 +6,7 @@ Library    OperatingSystem
 *** Variables ***
 ${base_url}     https://maps.googleapis.com
 ${req_uri}      /maps/api/place/nearbysearch/json?
-${apiKey}       AIzaSyDu2qgBARSGGOsO2-Frd7OpURfIp920qtQ
+${apiKey}       [PUT YOUR API KEY HERE]
 
 *** Test Cases ***
 GoogleMapsPlacesAPITC
